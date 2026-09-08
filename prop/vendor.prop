@@ -66,9 +66,7 @@ ro.vendor.mtk_aal_support=1
 ro.vendor.composer_version=3.3
 ro.vendor.display.type=oled
 ro.vendor.colorpick_adjust=true
-# The 6.6 transition display module lacks the extended DRM plane properties
-# required by the proprietary full HWC. Use its GLES-backed bring-up path.
-ro.vendor.mtk_ovl_bringup=1
+ro.vendor.mtk_ovl_bringup=0
 ro.vendor.mtk_aod_support=1
 ro.vendor.mml.mtk_mml_support=0
 ro.vendor.smvr.p2batch.vga=16
@@ -199,8 +197,6 @@ ro.soc.model=MT6833
 ro.soc.manufacturer=Mediatek
 
 # Surface Flinger
-debug.sf.enable_hwc_vds=0
-debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 debug.sf.frame_rate_multiple_threshold=120
 ro.surface_flinger.enable_frame_rate_override=false
@@ -271,11 +267,11 @@ ro.vendor.vt.mtk_thin_md_support_mode=0
 ro.vendor.md_auto_setup_ims=1
 persist.vendor.ims_support=1
 persist.vendor.mtk_dynamic_ims_switch=1
-persist.vendor.mtk_wfc_support=0
+persist.vendor.mtk_wfc_support=1
 persist.vendor.volte_support=1
 persist.vendor.mtk.volte.enable=1
-persist.vendor.vilte_support=0
-persist.vendor.viwifi_support=0
+persist.vendor.vilte_support=1
+persist.vendor.viwifi_support=1
 
 # TEE
 ro.vendor.mtk_tee_gp_support=1
