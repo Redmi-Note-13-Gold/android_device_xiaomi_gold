@@ -1,5 +1,6 @@
 # Camera sensor identifiers missing from the common MediaTek policy.
 vendor.camera.sensor. u:object_r:vendor_mtk_camera_prop:s0 prefix string
+persist.vendor.camera. u:object_r:vendor_mtk_camera_prop:s0 prefix string
 persist.vendor.camera.privapp.list u:object_r:vendor_gold_camera_prop:s0 exact string
 
 # Fingerprint vendor information published by the legacy FPC module.
