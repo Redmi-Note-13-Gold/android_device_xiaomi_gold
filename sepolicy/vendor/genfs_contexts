@@ -7,13 +7,24 @@ genfscon sysfs /devices/platform/fingerprint u:object_r:gold_sysfs_fingerprint:s
 
 # Standalone charge-pump power supply queried by the health HAL.
 genfscon sysfs /devices/platform/11e02000.i2c/i2c-7/7-0066/power_supply/sc-cp-standalone u:object_r:gold_sysfs_charger:s0
-genfscon sysfs /devices/platform/11e01000.i2c/i2c-5/5-0034/mt6360-chg.2.auto u:object_r:gold_sysfs_charger:s0
+genfscon sysfs /devices/platform/11e01000.i2c/i2c-5/5-0034/mt6360-chg.2.auto/power_supply/primary_chg u:object_r:gold_sysfs_charger:s0
+
+# USB-PD authentication interface used by batterysecret. Keep this separate
+# from generic sysfs so the daemon cannot write unrelated kernel controls.
+genfscon sysfs /devices/platform/pd_adapter/Charging_Adapter/pd_adapter u:object_r:gold_sysfs_usbpd:s0
+
+# The Type-C class points here on gold. batterysecret and the MTK USB HAL need
+# to inspect and switch data_role while negotiating an authenticated charger.
+genfscon sysfs /devices/platform/rt-pd-manager/typec/port0 u:object_r:sysfs_usb_nonplat:s0
 
 # Wakeup-source names are consumed by the platform system_suspend service.
 genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/charger/power_supply/mtk-mst-hvdiv-chg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/charger/power_supply/mtk-slv-hvdiv-chg/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11e01000.i2c/i2c-5/5-0034/mt6360-chg.2.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11e01000.i2c/i2c-5/5-0034/mt6360-chg.2.auto/power_supply/primary_chg/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/11e02000.i2c/i2c-7/7-0066/power_supply/sc-cp-standalone/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/battery-manager/power_supply/battery/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/fingerprint/wakeup u:object_r:sysfs_wakeup:s0
 # "wakeup" above is a prefix match, so override the adjacent FPC control file.
 genfscon sysfs /devices/platform/fingerprint/wakeup_enable u:object_r:gold_sysfs_fingerprint:s0
