@@ -13,3 +13,6 @@ bluetooth.profile.hid.host.enabled=true
 bluetooth.profile.opp.enabled=true
 bluetooth.profile.pan.nap.enabled=true
 bluetooth.profile.pan.panu.enabled=true
+
+# Device specific properties
+import /product/etc/sku/${ro.boot.product.hardware.sku}.prop

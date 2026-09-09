@@ -1,0 +1,28 @@
+# Redmi Note 13 5G (India)
+
+ro.product.brand=Redmi
+ro.product.device=gold
+ro.product.manufacturer=Xiaomi
+ro.product.model=2312DRAABI
+ro.product.name=gold_in_global
+ro.product.marketname=Redmi Note 13 5G
+ro.product.board=gold
+ro.product.product.brand=Redmi
+ro.product.product.device=gold
+ro.product.product.manufacturer=Xiaomi
+ro.product.product.model=2312DRAABI
+ro.product.product.name=gold_in_global
+ro.product.vendor.brand=Redmi
+ro.product.vendor.device=gold
+ro.product.vendor.manufacturer=Xiaomi
+ro.product.vendor.model=2312DRAABI
+ro.product.vendor.cert=2312DRAABI
+ro.product.vendor.name=gold_in_global
+ro.product.vendor.marketname=Redmi Note 13 5G
+ro.product.odm.brand=Redmi
+ro.product.odm.device=gold
+ro.product.odm.manufacturer=Xiaomi
+ro.product.odm.model=2312DRAABI
+ro.product.odm.cert=2312DRAABI
+ro.product.odm.name=gold_in_global
+ro.product.odm.marketname=Redmi Note 13 5G

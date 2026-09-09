@@ -24,6 +24,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(DEVICE_PATH)/configs/linker.config.json
 
+# Device specific properties
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/sku,$(TARGET_COPY_OUT_PRODUCT)/etc/sku)
+
 # Vendor Binder service manager (required by MediaTek PQ)
 PRODUCT_PACKAGES += \
     vndservicemanager

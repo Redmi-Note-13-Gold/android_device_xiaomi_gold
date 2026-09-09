@@ -1,0 +1,27 @@
+# Redmi Note 13R Pro (China)
+ro.product.brand=Redmi
+ro.product.device=gold
+ro.product.manufacturer=Xiaomi
+ro.product.model=2311FRAFDC
+ro.product.name=gold_a
+ro.product.marketname=Redmi Note 13R Pro
+ro.product.board=gold
+ro.product.product.brand=Redmi
+ro.product.product.device=gold
+ro.product.product.manufacturer=Xiaomi
+ro.product.product.model=2311FRAFDC
+ro.product.product.name=gold_a
+ro.product.vendor.brand=Redmi
+ro.product.vendor.device=gold
+ro.product.vendor.manufacturer=Xiaomi
+ro.product.vendor.model=2311FRAFDC
+ro.product.vendor.cert=2311FRAFDC
+ro.product.vendor.name=gold_a
+ro.product.vendor.marketname=Redmi Note 13R Pro
+ro.product.odm.brand=Redmi
+ro.product.odm.device=gold
+ro.product.odm.manufacturer=Xiaomi
+ro.product.odm.model=2311FRAFDC
+ro.product.odm.cert=2311FRAFDC
+ro.product.odm.name=gold_a
+ro.product.odm.marketname=Redmi Note 13R Pro

@@ -1,0 +1,29 @@
+# 2312DRAF3G (Global)
+# TODO: Add correct marketname to this. No verifiable info online.
+
+ro.product.brand=POCO
+ro.product.device=gold
+ro.product.manufacturer=Xiaomi
+ro.product.model=2312DRAF3G
+ro.product.name=iron_p_global
+ro.product.marketname=2312DRAF3G
+ro.product.board=iron
+ro.product.product.brand=POCO
+ro.product.product.device=gold
+ro.product.product.manufacturer=Xiaomi
+ro.product.product.model=2312DRAF3G
+ro.product.product.name=iron_p_global
+ro.product.vendor.brand=POCO
+ro.product.vendor.device=iron
+ro.product.vendor.manufacturer=Xiaomi
+ro.product.vendor.model=2312DRAF3G
+ro.product.vendor.cert=2312DRAF3G
+ro.product.vendor.name=iron_p_global
+ro.product.vendor.marketname=2312DRAF3G
+ro.product.odm.brand=POCO
+ro.product.odm.device=iron
+ro.product.odm.manufacturer=Xiaomi
+ro.product.odm.model=2312DRAF3G
+ro.product.odm.cert=2312DRAF3G
+ro.product.odm.name=iron_p_global
+ro.product.odm.marketname=2312DRAF3G
