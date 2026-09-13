@@ -1,0 +1,59 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// The resource behavior is defined once per physical camera configuration.
+java_defaults {
+    name: "ApertureResGoldNoUWM",
+    resource_dirs: ["NoUWM/res"],
+}
+
+java_defaults {
+    name: "ApertureResGoldUWM",
+    resource_dirs: ["UWM/res"],
+}
+
+// Each SKU variant
+runtime_resource_overlay {
+    name: "ApertureResGoldNoUWMGoldACn",
+    defaults: ["ApertureResGoldNoUWM"],
+    vendor: true,
+    manifest: "manifests/NoUWM/gold_a_cn.xml",
+}
+
+runtime_resource_overlay {
+    name: "ApertureResGoldNoUWMGoldAIn",
+    defaults: ["ApertureResGoldNoUWM"],
+    vendor: true,
+    manifest: "manifests/NoUWM/gold_a_in.xml",
+}
+
+runtime_resource_overlay {
+    name: "ApertureResGoldNoUWMGoldCn",
+    defaults: ["ApertureResGoldNoUWM"],
+    vendor: true,
+    manifest: "manifests/NoUWM/gold_cn.xml",
+}
+
+runtime_resource_overlay {
+    name: "ApertureResGoldNoUWMIronPGl",
+    defaults: ["ApertureResGoldNoUWM"],
+    vendor: true,
+    manifest: "manifests/NoUWM/iron_p_gl.xml",
+}
+
+runtime_resource_overlay {
+    name: "ApertureResGoldUWMGoldIn",
+    defaults: ["ApertureResGoldUWM"],
+    vendor: true,
+    manifest: "manifests/UWM/gold_in.xml",
+}
+
+runtime_resource_overlay {
+    name: "ApertureResGoldUWMIronGl",
+    defaults: ["ApertureResGoldUWM"],
+    vendor: true,
+    manifest: "manifests/UWM/iron_gl.xml",
+}

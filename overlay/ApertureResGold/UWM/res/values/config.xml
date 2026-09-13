@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: 2026 The LineageOS Project
+SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Expose the standalone ultrawide and macro cameras as selectable lenses. -->
+    <bool name="config_enableAuxCameras">true</bool>
+
+    <!-- No standalone sensor ID is ignored. -->
+    <string-array name="config_ignoredAuxCameraIds" />
+
+    <!-- Do not expose the multi-sensor logical device as another lens. -->
+    <bool name="config_ignoreLogicalAuxCameras">true</bool>
+
+    <!-- Trust the modes advertised by each fitted sensor. -->
+    <string-array name="config_additionalVideoConfigurations" />
+
+    <!-- The auxiliary sensors are standalone; do not invent zoom points. -->
+    <string-array name="config_logicalZoomRatios" />
+</resources>
