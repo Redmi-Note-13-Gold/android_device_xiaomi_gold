@@ -7,6 +7,7 @@ service vendor.health-gold /vendor/bin/hw/android.hardware.health-service.gold
 
 service vendor.charger /vendor/bin/hw/android.hardware.health-service.gold --charger
     class charger
+    disabled
     seclabel u:r:charger_vendor:s0
     user system
     group system graphics wakelock input
@@ -17,5 +18,7 @@ service vendor.charger /vendor/bin/hw/android.hardware.health-service.gold --cha
     file /proc/last_kmsg r
 
 on charger
+    wait /dev/dri/card0 20
     chown system system /dev/graphics/fb0
     chown system system /dev/dri/card0
+    start vendor.charger
