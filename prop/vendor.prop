@@ -257,7 +257,6 @@ ro.vendor.mtk_fd_support=1
 persist.radio.multisim.config=dsds
 persist.vendor.radio.msimmode=dsds
 ro.vendor.radio.max.multisim=dsds
-ro.telephony.sim.count=2
 telephony.active_modems.max_count=2
 persist.vendor.radio.smart.data.switch=1
 ro.vendor.mtk_single_bin_modem_support=1
@@ -290,7 +289,6 @@ ro.vendor.nfc.debounce_field_on=1
 
 # WiFi
 wifi.interface=wlan0
-wifi.supplicant_scan_interval=120
 
 # Zygote
 zygote.critical_window.minute=10
