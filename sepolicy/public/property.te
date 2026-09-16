@@ -3,3 +3,9 @@ system_public_prop(system_gold_camera_runtime_prop)
 
 # Read-only camera configuration supplied by vendor_init during boot.
 system_vendor_config_prop(system_gold_camera_config_prop)
+
+# Product identity read by the modem and USB gadget setup.
+system_vendor_config_prop(system_gold_marketname_prop)
+
+# Legacy Xiaomi audio configuration queried by proprietary audio components.
+system_vendor_config_prop(system_gold_audio_config_prop)

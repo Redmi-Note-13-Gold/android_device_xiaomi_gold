@@ -9,5 +9,9 @@ persist.vendor.sys.fp. u:object_r:vendor_gold_fingerprint_prop:s0 prefix string
 # Modem identity published by rild.
 ro.vendor.oem.meid u:object_r:vendor_mtk_radio_prop:s0 exact string
 
+# Properties used by the stock thermal and audio implementations.
+vendor.sys.thermal.data.path u:object_r:vendor_thermal_prop:s0 exact string
+ro.vendor.config.low_ram u:object_r:vendor_mtk_audio_prop:s0 exact bool
+
 # Charging
 persist.vendor.accelerate.charge    u:object_r:vendor_accelerate_charge_prop:s0 exact string

@@ -1,0 +1,3 @@
+# Market name is supplied by the SKU configuration and consumed by the stock
+# radio implementation.
+get_prop(rild, system_gold_marketname_prop)

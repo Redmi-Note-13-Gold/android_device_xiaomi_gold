@@ -1,0 +1,3 @@
+# module_request() attempts to write a key as part of an optional kernel path.
+# The module loader does not need keyring write access to insert the modules.
+dontaudit init_insmod_sh self:key write;

@@ -1,3 +1,11 @@
 persist.camera.dualcal.state u:object_r:system_gold_camera_runtime_prop:s0 exact string
 ro.mtk_cam_dualzoom_support u:object_r:system_gold_camera_config_prop:s0 exact bool
 ro.mtk_cam_stereo_camera_support u:object_r:system_gold_camera_config_prop:s0 exact bool
+camera. u:object_r:system_gold_camera_config_prop:s0 prefix string
+persist.beauty. u:object_r:system_gold_camera_config_prop:s0 prefix string
+
+ro.product.marketname u:object_r:system_gold_marketname_prop:s0 exact string
+ro.product.vendor.marketname u:object_r:system_gold_marketname_prop:s0 exact string
+ro.product.odm.marketname u:object_r:system_gold_marketname_prop:s0 exact string
+
+ro.miui.build.region u:object_r:system_gold_audio_config_prop:s0 exact string

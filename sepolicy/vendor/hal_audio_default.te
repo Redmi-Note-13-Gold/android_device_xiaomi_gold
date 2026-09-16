@@ -2,3 +2,6 @@ r_dir_file(hal_audio_default, gold_sysfs_audio_amp)
 
 # MediaTek's audio HAL writes playback state to the MI event device.
 allow hal_audio_default gold_miev_device:chr_file { open write };
+
+# Region configuration queried by the proprietary Xiaomi audio libraries.
+get_prop(hal_audio_default, system_gold_audio_config_prop)

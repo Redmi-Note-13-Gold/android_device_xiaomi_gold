@@ -1,0 +1,6 @@
+# RFCOMM's in-kernel worker binds its Bluetooth socket during initialization.
+allow kernel self:capability net_bind_service;
+
+# Stock display code probes debug-only framebuffer nodes that are absent from
+# production policy; failure is harmless and should not fill the audit log.
+dontaudit kernel debugfs_fb:dir search;
