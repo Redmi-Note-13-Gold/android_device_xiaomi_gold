@@ -6,7 +6,7 @@
 DEVICE_PATH := device/xiaomi/gold
 
 # Keep authentication out of the way while the new firmware is being brought up.
-WITH_ADB_INSECURE := true
+#WITH_ADB_INSECURE := true
 
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
