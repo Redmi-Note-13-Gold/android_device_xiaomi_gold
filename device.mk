@@ -21,6 +21,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(DEVICE_PATH)/configs/linker.config.json
 
+# Required by the Global camera, Codec2 and radio binaries using /dev/vndbinder.
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -128,19 +132,13 @@ PRODUCT_PACKAGES += \
     fstab.mt6833 \
     fstab.mt6833.vendor_ramdisk
 
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
-
 # GNSS
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
 # Graphics
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack-service.mediatek-mali \
-    android.hardware.graphics.composer@2.1-service
+    android.hardware.memtrack-service.mediatek
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
@@ -160,6 +158,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.mt6833.rc \
     init.project.rc \
+    init.project.vendor.rc \
     init.recovery.mt6833.rc \
     ueventd.mtk.rc
 
@@ -186,10 +185,7 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
 # Media
-$(call soong_config_set_bool,android_hardware_mediatek_codec2,link_v33_libstagefright_foundation,true)
-
-PRODUCT_PACKAGES += \
-    android.hardware.media.c2-mtk-service
+# Matching 64-bit Global Codec2 service is provided by gold-vendor.mk.
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -201,6 +197,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    GoldAlphaFrameworkOverlay \
+    GoldAlphaSettingsOverlay \
     FrameworkResOverlayGold \
     TetheringConfigOverlay \
     SettingsResOverlayGold \
@@ -226,9 +224,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Radio
-PRODUCT_PACKAGES += \
-    vendor_mdota_symlink
-
+# The matching stock modem configuration is installed from proprietary-files.
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
@@ -258,7 +254,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/google/interfaces \
     hardware/mediatek \
-    hardware/mediatek/libaedv \
     hardware/mediatek/libmtkperf_client \
     hardware/xiaomi
 
@@ -273,6 +268,8 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB
+$(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
@@ -306,3 +303,22 @@ PRODUCT_COPY_FILES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/gold/gold-vendor.mk)
+
+# Gold 23.0 validated eUICC integration and shared 20dp status bar insets.
+PRODUCT_PACKAGES += \
+    OpenEUICC \
+    GoldStatusBarOverlay
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/android.hardware.telephony.euicc.xml
+
+# Validated MediaTek IMS v5 and VoLTE integration from the 23.0 gold tree.
+PRODUCT_PACKAGES += \
+    ImsService \
+    GoldImsTelephonyOverlay \
+    GoldImsFrameworkOverlay \
+    GoldImsCarrierOverlay
+
+# Device-specific charger launch order after the display modules are ready.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/gold-charger.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/gold-charger.rc

@@ -181,18 +181,6 @@
       "Type": "COMPONENT"
     },
     {
-      "Name": "mtktswmt-sysrst",
-      "Type": "COMPONENT"
-    },
-    {
-      "Name": "mtktswmt-pa1",
-      "Type": "COMPONENT"
-    },
-    {
-      "Name": "mtktswmt-pa2",
-      "Type": "COMPONENT"
-    },
-    {
       "Name": "mtk-cl-bcct00",
       "Type": "COMPONENT"
     },
@@ -345,7 +333,7 @@
       "Type": "CPU"
     },
     {
-      "Name": "thermal-devfreq-0",
+      "Name": "devfreq-13000000.mali",
       "Type": "GPU"
     },
     {

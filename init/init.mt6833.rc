@@ -31,7 +31,7 @@ on charger
     start mi_thermald
 
     # Change permissions
-    mount ext4 /dev/block/by-name/cache /cache rw wait
+    # /cache points into unmounted /data in charger mode; no charger service uses it.
     chmod 0660 /dev/spm
     chown system system /dev/spm
     chmod 0666 /dev/kmsg
@@ -61,6 +61,7 @@ on charger
     start vendor.light-default
 
 on fs
+    mount_all /vendor/etc/fstab.mt6833 --early
     mount ext4 /dev/block/by-name/rescue /mnt/rescue noatime
     restorecon_recursive /mnt/rescue
 
@@ -89,7 +90,12 @@ on post-fs
     chmod 0770 /mnt/vendor/protect_s
     chown root log /proc/ccci_sib
 
+on late-fs
+    mount_all /vendor/etc/fstab.mt6833 --late
+
 on post-fs-data
+    wait_for_prop vendor.all.modules.ready 1
+
     # boot time fs tune
     write /sys/block/mmcblk0/queue/iostats 0
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048

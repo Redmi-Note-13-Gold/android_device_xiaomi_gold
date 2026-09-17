@@ -26,6 +26,7 @@ on post-fs-data
     restorecon /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
     mkdir /mnt/vendor/persist 0777 system camera
     mkdir /mnt/vendor/persist/camera 0777 system camera
+    restorecon_recursive /mnt/vendor/persist/camera
     chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wd.golden
     chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wu.golden
     chmod 0777 /vendor/etc/camera/golden_ov13b10_i_ov2180_i.bin
@@ -36,6 +37,7 @@ on post-fs-data
     chmod 0777 /data/vendor/camera/golden_s5k3l6_ii_ov2180_ii.bin
     chown system system /sys/class/touch/touch_dev/palm_sensor
     mkdir /data/vendor/camera 0777 system camera
+    restorecon_recursive /data/vendor/camera
     mkdir /data/vendor/camera/model 0777 system camera
     mkdir /data/vendor/camera/model/dof_model 0777 system camera
     mkdir /data/vendor/camera/model/rt_model 0777 system camera

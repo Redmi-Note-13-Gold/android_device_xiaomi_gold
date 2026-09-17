@@ -13,6 +13,11 @@ else
   exit 1
 fi
 
+modprobe_log=""
+if [ "$(getprop ro.debuggable)" = "1" ]; then
+  modprobe_log="-s"
+fi
+
 if [ -f $cfg_file ]; then
   while IFS="|" read -r action arg
   do
@@ -32,15 +37,22 @@ if [ -f $cfg_file ]; then
       "enable") echo 1 > $arg ;;
       "modprobe")
         insmod_arg=${arg}
-        for partition in vendor_dlkm
+        for partition in system_dlkm vendor
         do
-          case ${insmod_arg} in
-            "-b *" | "-b")
-              arg="-b $(cat /${partition}/lib/modules/modules.load)" ;;
-            "*" | "")
-              arg="$(cat /${partition}/lib/modules/modules.load)" ;;
-          esac
-          modprobe -a -d /${partition}/lib/modules $arg
+          modules_dir_base="/${partition}/lib/modules"
+          for modules_dir in ${modules_dir_base}/*/ ${modules_dir_base}
+          do
+            if [ ! -f "${modules_dir}/modules.load" ]; then
+              continue
+            fi
+            case ${insmod_arg} in
+              "-b *" | "-b")
+                arg="-b $(cat ${modules_dir}/modules.load)" ;;
+              "*" | "")
+                arg="$(cat ${modules_dir}/modules.load)" ;;
+            esac
+            modprobe $modprobe_log -a -d ${modules_dir} $arg
+          done
         done
     esac
   done < $cfg_file

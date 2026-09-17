@@ -1,16 +1,40 @@
-# All blobs are from V816.0.15.0.UNQMIXM unless noted or pinned
+# SPDX-License-Identifier: Apache-2.0
+# Derived from Dhterech/android_device_xiaomi_gold at 05f3e97ecf196e7f912cbcf7d1e93fa32958cf98.
+# All blobs are from locked OS3.0.5.0.VNQMIXM Global Recovery; see proprietary-source.json.
 
 # Audio
 vendor/firmware/aw87xxx_acf.bin
 vendor/firmware/awinic_params.bin
 vendor/firmware/awinic_sinwave_params.bin
 vendor/firmware/sipa.bin
+vendor/lib/hw/audio.primary.mt6833.so
+vendor/lib/hw/audio.r_submix.mt6833.so
+vendor/lib/libMtkSpeechEnh.so
+vendor/lib/lib_iir.so
+vendor/lib/libaudio_param_parser-vnd.so
+vendor/lib/libaudiocompensationfilter_vendor.so
+vendor/lib/libaudiocompensationfilterc.so
+vendor/lib/libaudiocomponentengine_vendor.so
+vendor/lib/libaudiocomponentenginec.so
+vendor/lib/libaudiodcrflt_vendor.so
+vendor/lib/libaudiofmtconv.so
+vendor/lib/libaudioloudc.so
+vendor/lib/libaudiotoolkit_vendor.so
+vendor/lib/libaudiocustparam_vendor.so
+vendor/lib/libaudioprimarydevicehalifclient.so
+vendor/lib/libaurisysdemo.so
+vendor/lib/libbessound_hd_mtk_vendor.so
+vendor/lib/libblisrc32_vendor.so
+vendor/lib/libmisound.so
+vendor/lib/libmtklimiter_vendor.so
+vendor/lib/libmtkshifter_vendor.so
+vendor/lib/libspeechparser_vendor.so
+vendor/lib/hw/awinic.audio.effect.so;FIX_SONAME
 vendor/lib64/hw/audio.primary.mt6833.so
 vendor/lib64/hw/audio.r_submix.mt6833.so
 vendor/lib64/hw/awinic.audio.effect.so;FIX_SONAME
 vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/lib_iir.so
-vendor/lib64/lib_speech_enh.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -30,14 +54,21 @@ vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
+vendor/lib64/libmisound.so
 vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libxlog.so
-vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
+vendor/lib/libxlog.so
+vendor/lib/libaedv.so
+vendor/lib/libmisight.so
+vendor/lib64/libaedv.so
+vendor/lib64/libmisight.so
 
 # Audio (Configs)
+vendor/etc/aurisys_config.xml
+vendor/etc/aurisys_config_rv.xml
 vendor/etc/audio_param/AudioParamOptions.xml
 vendor/etc/audio_param/AudioParamOptions_vext.xml
 vendor/etc/audio_param/BtInfo_AudioParam.xml
@@ -46,6 +77,8 @@ vendor/etc/audio_param/CRSVolUI_AudioParam.xml
 vendor/etc/audio_param/CRSVolUI_ParamUnitDesc.xml
 vendor/etc/audio_param/CRSVol_AudioParam.xml
 vendor/etc/audio_param/CRSVol_ParamUnitDesc.xml
+vendor/etc/audio_param/Codec_AudioParam.xml
+vendor/etc/audio_param/Codec_ParamUnitDesc.xml
 vendor/etc/audio_param/HpImpedance_AudioParam.xml
 vendor/etc/audio_param/HpImpedance_ParamUnitDesc.xml
 vendor/etc/audio_param/MicInfo_AudioParam.xml
@@ -65,10 +98,14 @@ vendor/etc/audio_param/PlaybackVolUI_ParamUnitDesc.xml
 vendor/etc/audio_param/Playback_AudioParam.xml
 vendor/etc/audio_param/Playback_ParamTreeView.xml
 vendor/etc/audio_param/Playback_ParamUnitDesc.xml
+vendor/etc/audio_param/Power_AudioParam.xml
+vendor/etc/audio_param/Power_ParamUnitDesc.xml
 vendor/etc/audio_param/RecordDMNR_AudioParam.xml
 vendor/etc/audio_param/RecordDMNR_ParamUnitDesc.xml
 vendor/etc/audio_param/RecordFIR_AudioParam.xml
 vendor/etc/audio_param/RecordFIR_ParamUnitDesc.xml
+vendor/etc/audio_param/RecordGainBoost_AudioParam.xml
+vendor/etc/audio_param/RecordGainBoost_ParamUnitDesc.xml
 vendor/etc/audio_param/RecordUI_AudioParam.xml
 vendor/etc/audio_param/RecordUI_ParamUnitDesc.xml
 vendor/etc/audio_param/RecordVolUI_AudioParam.xml
@@ -86,10 +123,14 @@ vendor/etc/audio_param/SmartPa_AudioParam.xml
 vendor/etc/audio_param/SmartPa_ParamUnitDesc.xml
 vendor/etc/audio_param/SoundEnhancement_AudioParam.xml
 vendor/etc/audio_param/SoundEnhancement_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechAcousticShock_AudioParam.xml
+vendor/etc/audio_param/SpeechAcousticShock_ParamUnitDesc.xml
 vendor/etc/audio_param/SpeechDMNR_AudioParam.xml
 vendor/etc/audio_param/SpeechDMNR_ParamUnitDesc.xml
 vendor/etc/audio_param/SpeechEchoRef_AudioParam.xml
 vendor/etc/audio_param/SpeechEchoRef_ParamUnitDesc.xml
+vendor/etc/audio_param/SpeechGainBoost_AudioParam.xml
+vendor/etc/audio_param/SpeechGainBoost_ParamUnitDesc.xml
 vendor/etc/audio_param/SpeechGeneral_AudioParam.xml
 vendor/etc/audio_param/SpeechGeneral_ParamUnitDesc.xml
 vendor/etc/audio_param/SpeechMagiClarity_AudioParam.xml
@@ -128,6 +169,8 @@ vendor/etc/audio_param/VoIP_ParamTreeView.xml
 vendor/etc/audio_param/VoIP_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPv2DMNR_AudioParam.xml
 vendor/etc/audio_param/VoIPv2DMNR_ParamUnitDesc.xml
+vendor/etc/audio_param/VoIPv2GainBoost_AudioParam.xml
+vendor/etc/audio_param/VoIPv2GainBoost_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPv2General_AudioParam.xml
 vendor/etc/audio_param/VoIPv2General_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPv2UI_AudioParam.xml
@@ -135,6 +178,10 @@ vendor/etc/audio_param/VoIPv2UI_ParamUnitDesc.xml
 vendor/etc/audio_param/VoIPv2_AudioParam.xml
 vendor/etc/audio_param/VoIPv2_ParamTreeView.xml
 vendor/etc/audio_param/VoIPv2_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWCommonSetting_AudioParam.xml
+vendor/etc/audio_param/VoWCommonSetting_ParamUnitDesc.xml
+vendor/etc/audio_param/VoWCompatibilityCode_AudioParam.xml
+vendor/etc/audio_param/VoWCompatibilityCode_ParamUnitDesc.xml
 vendor/etc/audio_param/VoWDspAec_AudioParam.xml
 vendor/etc/audio_param/VoWDspAec_ParamUnitDesc.xml
 vendor/etc/audio_param/VoWEngineFeature_AudioParam.xml
@@ -159,6 +206,8 @@ vendor/etc/audio_param_ce/CRSVolUI_AudioParam.xml
 vendor/etc/audio_param_ce/CRSVolUI_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/CRSVol_AudioParam.xml
 vendor/etc/audio_param_ce/CRSVol_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/Codec_AudioParam.xml
+vendor/etc/audio_param_ce/Codec_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/HpImpedance_AudioParam.xml
 vendor/etc/audio_param_ce/HpImpedance_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/MicInfo_AudioParam.xml
@@ -178,10 +227,14 @@ vendor/etc/audio_param_ce/PlaybackVolUI_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/Playback_AudioParam.xml
 vendor/etc/audio_param_ce/Playback_ParamTreeView.xml
 vendor/etc/audio_param_ce/Playback_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/Power_AudioParam.xml
+vendor/etc/audio_param_ce/Power_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/RecordDMNR_AudioParam.xml
 vendor/etc/audio_param_ce/RecordDMNR_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/RecordFIR_AudioParam.xml
 vendor/etc/audio_param_ce/RecordFIR_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/RecordGainBoost_AudioParam.xml
+vendor/etc/audio_param_ce/RecordGainBoost_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/RecordUI_AudioParam.xml
 vendor/etc/audio_param_ce/RecordUI_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/RecordVolUI_AudioParam.xml
@@ -199,10 +252,14 @@ vendor/etc/audio_param_ce/SmartPa_AudioParam.xml
 vendor/etc/audio_param_ce/SmartPa_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/SoundEnhancement_AudioParam.xml
 vendor/etc/audio_param_ce/SoundEnhancement_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/SpeechAcousticShock_AudioParam.xml
+vendor/etc/audio_param_ce/SpeechAcousticShock_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/SpeechDMNR_AudioParam.xml
 vendor/etc/audio_param_ce/SpeechDMNR_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/SpeechEchoRef_AudioParam.xml
 vendor/etc/audio_param_ce/SpeechEchoRef_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/SpeechGainBoost_AudioParam.xml
+vendor/etc/audio_param_ce/SpeechGainBoost_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/SpeechGeneral_AudioParam.xml
 vendor/etc/audio_param_ce/SpeechGeneral_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/SpeechMagiClarity_AudioParam.xml
@@ -241,6 +298,8 @@ vendor/etc/audio_param_ce/VoIP_ParamTreeView.xml
 vendor/etc/audio_param_ce/VoIP_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/VoIPv2DMNR_AudioParam.xml
 vendor/etc/audio_param_ce/VoIPv2DMNR_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/VoIPv2GainBoost_AudioParam.xml
+vendor/etc/audio_param_ce/VoIPv2GainBoost_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/VoIPv2General_AudioParam.xml
 vendor/etc/audio_param_ce/VoIPv2General_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/VoIPv2UI_AudioParam.xml
@@ -248,6 +307,10 @@ vendor/etc/audio_param_ce/VoIPv2UI_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/VoIPv2_AudioParam.xml
 vendor/etc/audio_param_ce/VoIPv2_ParamTreeView.xml
 vendor/etc/audio_param_ce/VoIPv2_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/VoWCommonSetting_AudioParam.xml
+vendor/etc/audio_param_ce/VoWCommonSetting_ParamUnitDesc.xml
+vendor/etc/audio_param_ce/VoWCompatibilityCode_AudioParam.xml
+vendor/etc/audio_param_ce/VoWCompatibilityCode_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/VoWDspAec_AudioParam.xml
 vendor/etc/audio_param_ce/VoWDspAec_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/VoWEngineFeature_AudioParam.xml
@@ -266,8 +329,14 @@ vendor/etc/audio_param_ce/Volume_AudioParam.xml
 vendor/etc/audio_param_ce/Volume_ParamUnitDesc.xml
 
 # Bluetooth (Driver)
+vendor/lib/libbluetooth_audio_session_aidl_mtk.so
+vendor/lib/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
+vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
 vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbt-vendor.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
+vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Bluetooth (Firmware)
 vendor/firmware/BT_FW.cfg
@@ -277,14 +346,14 @@ vendor/firmware/soc2_2_ram_bt_1a_1_hdr.bin
 # Camera
 vendor/bin/hw/camerahalserver
 vendor/etc/init/camerahalserver.rc
-vendor/bin/lib3a.ccu.dm                                 
+vendor/bin/lib3a.ccu.dm
 vendor/bin/lib3a.ccu.pm
 vendor/firmware/lib3a.ccu
 vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
-vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.camera.atms_aidl@1.0-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.camera.postproc_aidl@1.0-impl.so
 vendor/lib64/lib3a.ae.core.so
 vendor/lib64/lib3a.ae.so
 vendor/lib64/lib3a.af.core.so
@@ -308,6 +377,7 @@ vendor/lib64/lib3a.sensors.color.so;DISABLE_CHECKELF
 vendor/lib64/lib3a.sensors.flicker.so;DISABLE_CHECKELF
 vendor/lib64/libaaa_ltm.so
 vendor/lib64/libaaa_ltmx.so
+vendor/lib64/libMiVideoFilter.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libSQLiteModule_VER_ALL.so
 vendor/lib64/libSonyIMX230PdafLibrary.so
@@ -318,7 +388,6 @@ vendor/lib64/libSonyIMX386PdafLibrary.so
 vendor/lib64/libSonyIMX386PdafLibraryWrapper.so
 vendor/lib64/libSonyIMX519PdafLibrary.so
 vendor/lib64/libSonyIMX519PdafLibraryWrapper.so
-vendor/lib64/libvideofilter_only.so
 vendor/lib64/libc++_shared.so
 vendor/lib64/libwa_rtdof.so
 vendor/lib64/libimagebuffer_wrapper.so
@@ -345,13 +414,14 @@ vendor/lib64/libcam.hal3a.v3.ai3a.so
 vendor/lib64/libcam.hal3a.v3.awb.so
 vendor/lib64/libcam.hal3a.v3.fsmgr.so
 vendor/lib64/libcam.hal3a.v3.lscMgr.so
+vendor/lib/libcam.halsensor.hwintegration_mt6833.so
+vendor/lib64/libcam.halsensor.hwintegration_mt6833.so
 vendor/lib64/libcam.hal3a.v3.lsctbl.50.so
 vendor/lib64/libcam.hal3a.v3.nvram.50.so
 vendor/lib64/libcam.hal3a.v3.platform.so
 vendor/lib64/libcam.hal3a.v3.resultpool.so
 vendor/lib64/libcam.hal3a.v3.so
 vendor/lib64/libcam.halisp.buf.so
-vendor/lib64/libcam.halsensor.hwintegration.so
 vendor/lib64/libcam.halsensor.so
 vendor/lib64/libcam.afhal.so
 vendor/lib64/libcam.chdr.so
@@ -366,6 +436,7 @@ vendor/lib64/libcam.iopipe.so
 vendor/lib64/libcam.pdtblgen.so
 vendor/lib64/libcam.utils.sensorprovider.so;DISABLE_CHECKELF
 vendor/lib64/libcam.vhdr.so
+vendor/lib64/libchromanr.so
 vendor/lib64/libcamalgo.3dnr.so
 vendor/lib64/libcamalgo.dngop.so
 vendor/lib64/libcamalgo.eis.so
@@ -502,7 +573,6 @@ vendor/lib64/libmtkcam_synchelper.so
 vendor/lib64/libmtkcam_sysutils.so
 vendor/lib64/libmtkcam_tuning_utils.so
 vendor/lib64/libmtkcam_ulog.so
-vendor/lib64/libmtkisp_metadata.so
 vendor/lib64/libnbaio_mono.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
@@ -1245,10 +1315,20 @@ vendor/lib64/libCamera_sc202pcssunnymacromipiraw_Scene_Preview_4k.so
 vendor/lib64/libCamera_sc202pcssunnymacromipiraw_Scene_Preview_ZSD_Flash.so
 vendor/lib64/libCamera_sc202pcssunnymacromipiraw_Video_1080.so
 vendor/lib64/libCamera_sc202pcssunnymacromipiraw_Video_4k.so
+vendor/lib64/libmtkcam.debugwrapper.so
+vendor/lib64/libmtkcam_hal_aidl_common.so
+vendor/lib64/libmtkcam_hal_aidl_device.so
+vendor/lib64/libmtkcam_hal_aidl_provider.so
+vendor/lib64/libmtkcam_hal_aidl_utils.so
+vendor/lib64/libmtkisp_metadata_v3.so
 vendor/lib64/gc16b3_aac_front_mipi_raw_IdxMgr.so
 vendor/lib64/gc16b3_aac_front_mipi_raw_cn_IdxMgr.so
 vendor/lib64/gc16b3_sunny_front_mipi_raw_IdxMgr.so
 vendor/lib64/gc16b3_sunny_front_mipi_raw_cn_IdxMgr.so
+vendor/lib64/gc16b3_aac_front_mipi_raw_cn_tuning.so
+vendor/lib64/gc16b3_aac_front_mipi_raw_tuning.so
+vendor/lib64/gc16b3_sunny_front_mipi_raw_cn_tuning.so
+vendor/lib64/gc16b3_sunny_front_mipi_raw_tuning.so
 vendor/lib64/ov08d10_aac_ultra_mipi_raw_IdxMgr.so
 vendor/lib64/ov08d10_sunny_ultra_mipi_raw_IdxMgr.so
 vendor/lib64/ov08d10_aac_ultra_mipi_raw_tuning.so
@@ -1289,15 +1369,13 @@ vendor/lib64/sc202cs_sunny_depth_mipi_raw_cn_tuning.so
 vendor/lib64/sc202cs_sunny_depth_mipi_raw_tuning.so
 vendor/lib64/sc202pcs_aac_macro_mipi_raw_tuning.so
 vendor/lib64/sc202pcs_sunny_macro_mipi_raw_tuning.so
-vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so
 vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so
-vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so
-vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so
 vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so
+vendor/lib64/vendor.mediatek.hardware.camera.atms-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.camera.bgservice-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.camera.postproc-V1-ndk.so
 
 # Camera (configs)
 vendor/etc/camera/asd/asdcam_108M+2M_1/sceneDetection.xml
@@ -1323,32 +1401,6 @@ vendor/etc/camera/model/rt_model/preview_policy
 vendor/etc/camera/model/sg_cap_cache
 vendor/etc/camera/model/sg_cap_model
 vendor/etc/camera/model/sg_cap_policy
-vendor/etc/camera/png/102_SummerDay.png
-vendor/etc/camera/png/103_Fantasy.png
-vendor/etc/camera/png/104_Meet.png
-vendor/etc/camera/png/105_WindSing.png
-vendor/etc/camera/png/106_Lost.png
-vendor/etc/camera/png/107_Central.png
-vendor/etc/camera/png/108_NorthernEurope.png
-vendor/etc/camera/png/109_Rome.png
-vendor/etc/camera/png/110_BlackGold.png
-vendor/etc/camera/png/111_GreenOrange.png
-vendor/etc/camera/png/112_CyberPunk.png
-vendor/etc/camera/png/113_BlackIce.png
-vendor/etc/camera/png/121_Bleach.png
-vendor/etc/camera/png/122_Thriller.png
-vendor/etc/camera/png/123_TealOrange.png
-vendor/etc/camera/png/124_JapaneseStyle.png
-vendor/etc/camera/png/125_Latin.png
-vendor/etc/camera/png/126_Fantasy2.png
-vendor/etc/camera/png/127_Creamy.png
-vendor/etc/camera/png/128_Sepia.png
-vendor/etc/camera/png/129_Vivid.png
-vendor/etc/camera/png/130_Natural.png
-vendor/etc/camera/png/131_Monochrome.png
-vendor/etc/camera/png/132_MonochromeHighContrast.png
-vendor/etc/camera/png/133_MonochromeBrown.png
-vendor/etc/camera/png/134_MonochromeBlue.png
 vendor/etc/camera/resources/model/2722133617
 vendor/etc/camera/resources/render/BuildIn/Material/1166466556_252005700
 vendor/etc/camera/resources/render/BuildIn/Material/1166466556_2571257293
@@ -1553,7 +1605,7 @@ vendor/etc/camera/morpho_image_refiner_tuning_params_vendor_ultra_hdr.xml
 vendor/etc/camera/morpho_image_refiner_tuning_params_vendor_ultra_llhdr.xml
 vendor/etc/camera/sceneDetection.xml
 vendor/etc/camera/sg_pre_model
-odm/etc/camera/camerabooster.json
+vendor/odm/etc/camera/camerabooster.json
 
 # ConsumerIR
 vendor/lib64/hw/consumerir.common.so
@@ -1561,16 +1613,17 @@ vendor/lib64/hw/consumerir.common.so
 # Connectivity
 vendor/bin/wmt_loader
 vendor/bin/wmt_launcher
+vendor/firmware/WMT_SOC.cfg
 vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin
 vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
 
 # DRM (Widevine) - from malachite OS2.0.206.0.VOOMIXM
-vendor/apex/com.google.android.widevine.nonupdatable.apex|522c687fc5fdcff4ff89ca36b57a5c03420448dc
+vendor/apex/com.google.android.widevine.nonupdatable.apex|1ab71fd60c1f96932979b1a9ae76786aa13e8642
 vendor/lib64/liboemcrypto.so
 
 # Fingerprint
 vendor/lib64/hw/fingerprint.fpc.default.so
-vendor/lib64/hw/fingerprint.goodix.default.so
+vendor/lib64/hw/fingerprint.goodix.default.so;FIX_SONAME
 vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
@@ -1581,10 +1634,13 @@ vendor/bin/fuelgauged
 vendor/bin/fuelgauged_nvram
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
+vendor/lib/libfgauge_gm30.so
 vendor/lib64/libfgauge_gm30.so
 
 # Gatekeeper
-vendor/lib64/hw/gatekeeper.mitee.so
+vendor/bin/hw/android.hardware.gatekeeper-service.mitee
+vendor/etc/init/android.hardware.gatekeeper-service.mitee.rc
+vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.mitee.xml
 
 # GNSS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
@@ -1593,14 +1649,13 @@ vendor/bin/mtk_agpsd
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/nss-mtk.xml
-vendor/etc/vintf/manifest/gnss@2.1-service.xml
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
-vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
+vendor/lib64/hw/vendor.mediatek.hardware.gnss-impl.so
 vendor/lib64/hw/gps.default.so
 vendor/lib64/libDR.so
 vendor/lib64/libmnl.so
-vendor/lib64/librpc.so
-vendor/lib64/libviagpsrpc.so
+vendor/lib64/vendor.mediatek.hardware.gnss-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so
 
 # GNSS (Configs)
 vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml
@@ -1625,30 +1680,44 @@ vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/slp_conf
 
 # Graphics
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
-vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
+vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
+vendor/bin/hw/android.hardware.graphics.composer@3.3-service
+vendor/etc/gralloc/cam.xml
+vendor/etc/gralloc/dpu.xml
+vendor/etc/gralloc/dpu_aeu.xml
+vendor/etc/gralloc/gpu.xml
+vendor/etc/gralloc/vpu.xml
+vendor/etc/init/android.hardware.graphics.allocator-V2-service-mediatek.rc
+vendor/etc/init/android.hardware.graphics.composer@3.3-service.rc
+vendor/etc/init/display.rc
+vendor/etc/mali_platform.config
+vendor/etc/vintf/manifest/mapper.mediatek.xml
+vendor/lib/libged.so
+vendor/lib/libgralloc_extra.so
 vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
 vendor/lib/libladder.so
+vendor/lib/mt6833/libmml.so:vendor/lib/libmml.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
-vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so
+vendor/lib64/arm.graphics-V5-ndk.so
+vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib64/hw/hwcomposer.mt6833.so:vendor/lib64/hw/hwcomposer.mtk_common.so;FIX_SONAME
+vendor/lib64/hw/mapper.mediatek.so
 vendor/lib64/hw/vulkan.mali.so
 vendor/lib64/mt6833/libaiselector.so:vendor/lib64/libaiselector.so
 vendor/lib64/mt6833/libdpframework.so:vendor/lib64/libdpframework.so
-vendor/lib64/arm.graphics-V1-ndk_platform.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
+vendor/lib/libaal_sec.so
 vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
-vendor/lib64/libaal_mtk.so
+vendor/lib64/libaal_sec.so
 vendor/lib64/libaalservice.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libcomposer_ext.so
@@ -1665,32 +1734,48 @@ vendor/lib64/libladder.so
 vendor/lib64/libmml.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libscltm.so
+vendor/lib64/libsilkybrightnesscore.so
+vendor/lib/vendor.mediatek.hardware.composer_ext-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 
 # Keymint
-vendor/bin/hw/android.hardware.security.keymint@1.0-service.mitee;DISABLE_DEPS
-vendor/etc/init/android.hardware.security.keymint-service.mitee.rc
+system/lib64/android.hardware.security.keymint-V3-ndk.so:vendor/lib64/android.hardware.security.keymint-V3-ndk-prebuilt.so;FIX_SONAME
+vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee
+vendor/etc/init/android.hardware.security.keymint.mitee@3.0-service.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
 
 # Picture Quality
-vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
-vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
-vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
-vendor/lib64/mt6833/libpq_prot.so:vendor/lib64/libpq_prot.so
+vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service
+vendor/etc/init/vendor.mediatek.hardware.pq_aidl-service.rc
+vendor/etc/pq_flag.xml
+vendor/lib/libpq_sec.so
+vendor/lib/libpqhdrmetaparser.so
+vendor/lib/libpqsharememory.so
+vendor/lib/libpqtuning.so
+vendor/lib/libpqxmlparser.so
+vendor/lib/libsdrparser.so
+vendor/lib/vendor.mediatek.hardware.pq_aidl-V2-ndk.so
+vendor/lib/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
 vendor/lib64/libpq_cust_base.so
+vendor/lib64/libpq_sec.so
 vendor/lib64/libpqframework.so
+vendor/lib64/libpqhdrmetaparser.so
 vendor/lib64/libpqparamparser.so
-vendor/lib64/libpqpconfig.so
+vendor/lib64/libpqsharememory.so
+vendor/lib64/libpqtuning.so
+vendor/lib64/libpqxmlparser.so
+vendor/lib64/libsdrparser.so
+vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
+vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so
+vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.0.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.1.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.10.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.11.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.12.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.13.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.14.so
-vendor/lib64/vendor.mediatek.hardware.pq@2.15.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.2.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.3.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.4.so
@@ -1719,74 +1804,106 @@ vendor/lib/libvcodec_oal.so
 vendor/lib/libvpudv3a_vcodec.so
 
 # Media (Codec2)
+vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek;TRYSRCFIRST
+vendor/etc/init/android.hardware.media.c2-mediatek.rc
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
+vendor/etc/vintf/manifest/manifest_media_c2_default.xml
+vendor/lib/libcodec2_fsr.so
+vendor/lib/libcodec2_vpp_fa_plugin.so
+vendor/lib/libcodec2_vpp_mi_plugin.so
+vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_vdec.so
 vendor/lib64/libcodec2_mtk_venc.so
 vendor/lib64/libcodec2_mtk_c2store.so
+vendor/lib64/libcodec2_vpp_fa_plugin.so
+vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
 
+# Frozen AIDL libraries retained under compat SONAMEs for stock blobs
+#vendor/lib/android.hardware.graphics.common-V4-ndk.so
+#vendor/lib/android.hardware.graphics.common-V5-ndk.so
+#vendor/lib64/android.hardware.camera.common-V2-ndk.so
+#vendor/lib64/android.hardware.graphics.common-V4-ndk.so
+#vendor/lib64/android.hardware.graphics.common-V5-ndk.so
+
+# NFC / Secure Element
+vendor/bin/hw/android.hardware.nfc-service-st
+vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+vendor/etc/libnfc-hal-st.conf
+vendor/etc/libnfc-nci.conf
+vendor/etc/st21nfc_conf.txt
+vendor/firmware/st21nfc_fw.bin
+vendor/firmware/st21nfc_fw7.bin
+vendor/lib64/nfc_nci.st21nfc.st.so
+vendor/odm/etc/init/iron_gl/android.hardware.secure_element@1.2-service-mediatek.rc
+vendor/odm/etc/init/iron_gl/init.stnfc.rc
+vendor/odm/etc/init/iron_gl/nfc-service-st.rc
+vendor/odm/etc/init/iron_p_gl/android.hardware.secure_element@1.2-service-mediatek.rc
+vendor/odm/etc/init/iron_p_gl/init.stnfc.rc
+vendor/odm/etc/init/iron_p_gl/nfc-service-st.rc
+vendor/odm/etc/permissions/sku_iron_gl/android.hardware.nfc.hce.xml
+vendor/odm/etc/permissions/sku_iron_gl/android.hardware.nfc.hcef.xml
+vendor/odm/etc/permissions/sku_iron_gl/android.hardware.nfc.uicc.xml
+vendor/odm/etc/permissions/sku_iron_gl/android.hardware.nfc.xml
+vendor/odm/etc/permissions/sku_iron_p_gl/android.hardware.nfc.hce.xml
+vendor/odm/etc/permissions/sku_iron_p_gl/android.hardware.nfc.hcef.xml
+vendor/odm/etc/permissions/sku_iron_p_gl/android.hardware.nfc.uicc.xml
+vendor/odm/etc/permissions/sku_iron_p_gl/android.hardware.nfc.xml
+vendor/odm/etc/vintf/manifest_iron_gl.xml;EXTRACT_ONLY
+vendor/odm/etc/vintf/manifest_iron_p_gl.xml;EXTRACT_ONLY
+
+# Audio parser used by the booting aurisys configuration
+vendor/lib/libmtkspparser.so
+vendor/lib64/libmtkspparser.so
+
 # MMAgent
-vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
-vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
+vendor/lib/vendor.mediatek.hardware.mmagent-V1-ndk.so
 vendor/lib64/libmmagent.so
+vendor/lib64/vendor.mediatek.hardware.mmagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
 
 # MMS
-vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
-vendor/etc/init/vendor.mediatek.hardware.mms@1.6-service.rc
-vendor/lib64/hw/vendor.mediatek.hardware.mms@1.6-impl.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.0.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.1.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.2.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.3.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.4.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.5.so
-vendor/lib64/vendor.mediatek.hardware.mms@1.6.so
+vendor/bin/hw/vendor.mediatek.hardware.mms-service
+vendor/etc/init/vendor.mediatek.hardware.mms-service.rc
+vendor/lib/vendor.mediatek.hardware.mms-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mms-V1-ndk.so
 
 # NetD Agent
 vendor/bin/netdagent
 vendor/etc/init/netdagent.rc
 vendor/lib64/libforkexecwrap.so
 vendor/lib64/libifcutils_mtk.so
+vendor/lib/vendor.mediatek.hardware.netdagent-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
 # Neural Networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
-vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-gpu.xml
 vendor/lib64/mt6833/libnir_neon_driver.so:vendor/lib64/libnir_neon_driver.so
-vendor/lib64/APUWareUtilsServer.so
 vendor/lib64/libapu_mdw.so
-vendor/lib64/libapusys_edma.so
-vendor/lib64/libapusys.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so
 vendor/lib64/libarmnn.so
 vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libneuron_runtime.6.so
-vendor/lib64/libneuron_adapter.so
-vendor/lib64/libneuron_platform.so
-vendor/lib64/libneuropilot_hal_utils.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
-vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
 
 # NVRAM
-vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/nvram_daemon
 vendor/etc/init/nvram_daemon.rc
-vendor/etc/init/vendor.mediatek.hardware.nvram@1.1-sevice.rc
-vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
+vendor/lib/libnvram.so
+vendor/lib/libnvram_sec.so
 vendor/lib64/libconnfem.so
 vendor/lib64/libcustom_nvram.so
 vendor/lib64/libfile_op.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
-vendor/lib64/vendor.mediatek.hardware.nvram@1.0.so
-vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 
 # Power
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
 
 # Radio
@@ -1801,14 +1918,12 @@ vendor/etc/init/mtkrild.rc
 vendor/lib/libmtkcutils.so
 vendor/lib/libmtkproperty.so
 vendor/lib/libmtkrillog.so
-vendor/lib64/libcares_naptr.so
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
 vendor/lib64/libmipc.so
 vendor/lib64/libmnetlink_v104.so
 vendor/lib64/libmtk-fusion-ril-prop-vsim.so
 vendor/lib64/libmtk-ril.so
-vendor/lib64/libmtkares.so
 vendor/lib64/libmtkconfig.so
 vendor/lib64/libmtkconfigutils.so
 vendor/lib64/libmtkcutils.so
@@ -1830,10 +1945,338 @@ vendor/lib64/libtrm.so
 vendor/lib64/libvia-ril.so
 vendor/lib64/libviamipc-ril.so
 vendor/lib64/libwpfa.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex@2.0.so
-vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.assist-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.atci-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.cap-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.data-V3-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.dch-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.em-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.ims-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.messaging-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.modem-V3-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.mwi-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.network-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.rcs-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.rsu-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.se-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.smartratswitch-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
 
 # Radio (Config)
+vendor/etc/mdota/DATA_ONLY.mcfota
+vendor/etc/mdota/MP2.mcfota
+vendor/etc/mdota/MP2_CN.mcfota
+vendor/etc/mdota/MP2_CN_NN.mcfota
+vendor/etc/mdota/MTK_MD_OTA_CONFIG.ini
+vendor/etc/mdota/MTK_OPOTA_SBPID_1.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_10.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_100.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_1001.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_1002.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_1003.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_1004.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_101.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_102.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_103.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_104.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_105.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_106.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_107.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_108.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_109.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_11.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_110.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_111.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_112.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_113.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_114.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_115.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_116.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_117.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_118.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_119.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_12.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_120.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_121.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_122.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_123.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_124.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_125.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_126.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_127.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_128.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_129.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_130.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_131.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_132.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_133.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_134.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_135.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_136.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_137.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_138.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_139.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_140.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_141.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_143.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_144.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_145.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_146.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_147.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_148.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_149.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_15.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_150.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_151.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_152.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_153.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_154.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_155.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_156.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_157.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_158.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_159.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_16.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_160.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_161.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_162.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_163.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_164.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_165.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_166.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_167.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_168.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_169.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_17.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_170.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_171.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_172.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_173.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_174.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_175.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_176.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_177.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_178.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_179.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_18.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_180.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_181.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_182.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_183.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_184.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_185.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_186.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_187.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_188.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_189.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_19.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_190.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_191.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_192.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_193.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_194.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_195.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_196.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_197.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_198.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_199.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_2.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_20.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_200.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_201.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_202.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_203.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_204.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_205.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_206.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_207.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_208.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_209.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_21.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_210.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_211.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_212.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_213.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_214.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_215.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_216.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_217.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_218.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_219.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_220.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_221.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_222.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_223.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_224.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_225.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_227.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_228.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_231.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_232.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_233.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_234.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_235.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_236.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_237.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_238.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_239.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_240.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_241.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_242.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_243.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_244.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_245.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_246.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_247.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_248.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_249.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_250.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_251.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_252.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_253.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_254.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_255.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_256.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_257.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_258.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_259.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_260.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_261.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_262.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_263.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_264.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_265.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_266.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_267.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_268.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_269.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_270.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_271.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_272.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_273.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_274.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_275.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_276.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_277.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_278.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_279.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_280.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_281.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_282.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_283.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_284.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_285.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_286.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_287.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_288.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_289.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_290.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_291.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_292.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_293.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_294.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_295.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_296.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_297.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_298.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_299.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_3.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_301.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_302.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_303.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_304.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_306.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_307.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_310.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_312.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_313.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_314.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_315.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_316.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_318.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_319.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_320.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_321.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_322.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_323.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_324.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_325.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_326.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_327.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_328.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_329.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_332.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_333.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_334.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_335.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_336.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_337.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_338.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_339.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_340.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_341.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_343.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_344.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_345.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_347.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_348.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_350.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_352.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_353.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_354.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_355.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_356.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_357.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_358.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_359.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_360.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_362.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_363.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_364.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_365.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_366.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_367.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_368.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_369.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_370.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_371.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_372.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_373.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_374.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_375.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_376.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_377.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_378.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_379.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_380.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_381.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_382.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_383.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_386.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_387.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_388.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_389.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_400.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_402.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_410.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_421.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_424.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_437.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_438.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_452.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_481.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_487.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_499.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_5.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_50.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_509.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_6.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_7.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_8.mcfopota
+vendor/etc/mdota/MTK_OPOTA_SBPID_9.mcfopota
+vendor/etc/mdota/MTK_OTA.mcfota
 vendor/etc/ecc_list.xml
 vendor/etc/ecc_list_OP01.xml
 vendor/etc/ecc_list_OP02.xml
@@ -1841,7 +2284,6 @@ vendor/etc/ecc_list_OP09.xml
 vendor/etc/ecc_list_OP12.xml
 vendor/etc/ecc_list_OP17.xml
 vendor/etc/ecc_list_OP18.xml
-vendor/etc/ecc_list_OP20.xml
 vendor/etc/ecc_list_OP236.xml
 vendor/etc/ecc_list_preference.xml
 vendor/etc/special_pws_channel.xml
@@ -1852,12 +2294,15 @@ vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 
 # Sensors
+#vendor/lib64/android.frameworks.sensorservice-V1-ndk.so
+#vendor/lib64/android.hardware.sensors-V2-ndk.so
+#vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhwm.so
-vendor/lib64/libksensor.so
 vendor/lib64/libsensor_custom.so
+vendor/lib64/sensors.touch.detect.so
 
 # Touchscreen
 vendor/firmware/focaltech_ts_fw_CSOT.bin
@@ -1868,6 +2313,7 @@ vendor/firmware/goodix_test_limits_255_TM.csv
 vendor/firmware/gt9916r_ts_fw_tm.bin
 
 # Trusted Execution Environment (TEE)
+vendor/lib/libgz_uree.so
 vendor/bin/miteelog
 vendor/bin/tee-supplicant
 vendor/etc/init/miteelog.rc
@@ -1894,7 +2340,6 @@ vendor/mitee/ta/f13010e0-2ae1-11e5-896a0002a5d5c51d.ta
 
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
-vendor/etc/init/tetheroffloadservice.rc
 
 # Thermal
 vendor/bin/mi_thermald
@@ -1906,7 +2351,6 @@ vendor/etc/thermal-class0.conf
 vendor/etc/thermal-hp-game.conf
 vendor/etc/thermal-hp-normal.conf
 vendor/etc/thermal-huanji.conf
-vendor/etc/thermal-livestream.conf
 vendor/etc/thermal-map.conf
 vendor/etc/thermal-mgame.conf
 vendor/etc/thermal-navigation.conf
@@ -1916,11 +2360,13 @@ vendor/etc/thermal-phone.conf
 vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-video.conf
 vendor/etc/thermal-videochat.conf
+#vendor/etc/thermal_info_config.json
 vendor/etc/thermald-devices.conf
 
 # WiFi
-vendor/bin/wlan_assistant
-vendor/etc/init/wlan_assistant.rc
+# Keep the stock per-PCBA calibration selector separate from the generic source service.
+vendor/bin/wlan_assistant:vendor/bin/wlan_assistant-gold
+# Its init service is declared in init.connectivity.rc.
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
 vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
@@ -1930,3 +2376,15 @@ vendor/firmware/txpowerctrl.cfg
 vendor/firmware/wifi.cfg
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1a_1.bin
 vendor/firmware/WIFI_RAM_CODE_soc2_2_1_1.bin
+
+# Charging (Mi Turbo)
+vendor/bin/batterysecret
+
+# Global AIDL services and their stock init/VINTF registration
+vendor/bin/hw/vendor.mediatek.hardware.mmagent-service
+vendor/etc/init/vendor.mediatek.hardware.mmagent-service.rc
+vendor/bin/hw/vendor.mediatek.hardware.nvram-service
+vendor/etc/init/vendor.mediatek.hardware.nvram-sevice.rc
+vendor/etc/init/android.hardware.tetheroffload-V1-service.rc
+vendor/etc/vintf/manifest/android.hardware.tetheroffload-V1-service.xml
+vendor/lib64/vendor.mediatek.hardware.nvram-V1-ndk.so

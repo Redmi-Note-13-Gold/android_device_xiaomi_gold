@@ -188,3 +188,6 @@
 
 # MTK In-House TEE
 /dev/ttyACM0              0660   radio      radio
+
+# Stock high-frequency sensor manager, used by the system sensor HAL.
+/dev/hf_manager          0660   system     system

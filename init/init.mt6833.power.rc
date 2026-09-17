@@ -3,3 +3,7 @@ on init
     write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-3
     write /dev/cpuset/top-app/cpus 0-7
+
+# Start the hint worker once Android has completed its initial boot.
+on property:sys.boot_completed=1
+    setprop vendor.powerhal.init 1

@@ -46,6 +46,14 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.project.vendor.rc",
+    src: "init.project.rc",
+    filename: "init.project.rc",
+    relative_install_path: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.recovery.mt6833.rc",
     src: "init.recovery.mt6833.rc",
     relative_install_path: "init",
