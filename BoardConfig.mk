@@ -84,7 +84,7 @@ TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)-kernel/dtb
-BOARD_PREBUILT_SYSTEM_DLKMIMAGE := $(DEVICE_PATH)-kernel/system_dlkm.img
+BOARD_SYSTEM_DLKM_SRC := $(DEVICE_PATH)-kernel/system_dlkm
 
 # These optional MIUI scheduling modules were built for 6.6.30 and are rejected
 # by the 6.6.118 kernel. Binder itself is provided by GKI; binder_prio remains.
