@@ -550,10 +550,10 @@
     <dimen name="rounded_corner_radius">70px</dimen>
     <dimen name="rounded_corner_radius_bottom">70px</dimen>
     <dimen name="rounded_corner_radius_top">70px</dimen>
-    <dimen name="status_bar_height_default">111px</dimen>
-    <dimen name="status_bar_height_portrait">111px</dimen>
+    <dimen name="status_bar_height_default">94px</dimen>
+    <dimen name="status_bar_height_portrait">94px</dimen>
 
-    <string name="config_mainBuiltInDisplayCutout">M 0,0 H -28 V 111 H 28 V 0 H 0 Z</string>
-    <string name="config_mainBuiltInDisplayCutoutRectApproximation">M 0,0 H -28 V 111 H 28 V 0 H 0 Z</string>
+    <string name="config_mainBuiltInDisplayCutout">M 0,0 H -28 V 94 H 28 V 0 H 0 Z</string>
+    <string name="config_mainBuiltInDisplayCutoutRectApproximation">M 0,0 H -28 V 94 H 28 V 0 H 0 Z</string>
     <string name="config_mainDisplayShape">M20 0h1040s20 0 20 20v2360s0 20 -20 20h-1040s-20 0 -20 -20v-2360s0 -20 20 -20</string>
 </resources>
