@@ -147,6 +147,9 @@ PRODUCT_PACKAGES += \
     fstab.mt6833 \
     fstab.mt6833.vendor_ramdisk
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/init/fstab.enableswap:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.enableswap
+
 # GNSS
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
