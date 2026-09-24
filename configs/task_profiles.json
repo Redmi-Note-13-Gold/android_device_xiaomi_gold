@@ -1,0 +1,50 @@
+{
+  "Attributes": [],
+  "Profiles": [
+    {
+      "Name": "PreferIdleSet",
+      "Actions": [
+        {
+          "Name": "SetTimerSlack",
+          "Params": {
+            "Slack": "50000"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SCHED_QOS_SENSITIVE_STANDARD",
+      "Actions": [
+        {
+          "Name": "SetTimerSlack",
+          "Params": {
+            "Slack": "50000"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SCHED_QOS_SENSITIVE_EXTREME",
+      "Actions": [
+        {
+          "Name": "SetTimerSlack",
+          "Params": {
+            "Slack": "10000"
+          }
+        }
+      ]
+    },
+    {
+      "Name": "SCHED_QOS_NONE",
+      "Actions": [
+        {
+          "Name": "SetTimerSlack",
+          "Params": {
+            "Slack": "50000"
+          }
+        }
+      ]
+    }
+  ],
+  "AggregateProfiles": []
+}

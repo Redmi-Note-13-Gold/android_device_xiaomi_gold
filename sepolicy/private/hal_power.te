@@ -1,0 +1,4 @@
+# Allow power HAL servers to update per-thread uclamp values for ADPF clients.
+allow hal_power_server surfaceflinger:process setsched;
+allow hal_power_server hal_graphics_composer_server:process setsched;
+allow hal_power_server system_server:process setsched;

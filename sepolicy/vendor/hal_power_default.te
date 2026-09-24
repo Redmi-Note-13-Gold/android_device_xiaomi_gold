@@ -1,0 +1,5 @@
+# Allow libperfmgr to update uclamp for app threads carrying per-app MCS categories.
+typeattribute hal_power_default mlstrustedsubject;
+
+allow hal_power_default self:capability sys_nice;
+allow hal_power_default appdomain:process { getsched setsched };
