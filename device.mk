@@ -258,8 +258,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libmtkperf_client_vendor
 
+# libperfmgr requires these profile names, but MT6833 has no Pixel
+# /proc/vendor_sched/sched_qos interface; keep the vendor definitions no-op.
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    $(DEVICE_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
+    $(DEVICE_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Radio
 # NOTE: Renamed from vendor_mdota_symlink
