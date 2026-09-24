@@ -28,6 +28,8 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/sku,$(TARGET_COPY_OUT_PRODUCT)/etc/sku)
 
+$(call inherit-product, $(DEVICE_PATH)/prop/vendor_logtag.mk)
+
 # Vendor Binder service manager (required by MediaTek PQ)
 PRODUCT_PACKAGES += \
     vndservicemanager
