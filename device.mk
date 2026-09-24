@@ -132,6 +132,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.hardware.drm.clearkey
 
+# Display
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/display/display_id_4627039422300187648.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4627039422300187648.xml
+
 # FastbootD
 PRODUCT_PACKAGES += \
     android.hardware.fastboot-service.example_recovery \
