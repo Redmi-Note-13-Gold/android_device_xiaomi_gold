@@ -137,7 +137,7 @@ ro.vendor.arm.gralloc.shared_access_usage_flags=0x10000000
 ro.vendor.arm.gralloc.shared_access_usage_mask=0x50000000
 
 # HWUI
-debug.hwui.use_hint_manager=true
+debug.hwui.use_hint_manager=false
 
 # Media
 media.c2.hal.selection=aidl
@@ -197,7 +197,15 @@ ro.soc.model=MT6833
 ro.soc.manufacturer=Mediatek
 
 # Surface Flinger
-debug.sf.enable_adpf_cpu_hint=true
+debug.sf.enable_adpf_cpu_hint=false
+debug.sf.use_phase_offsets_as_durations=1
+debug.sf.late.sf.duration=15600000
+debug.sf.late.app.duration=17000000
+debug.sf.early.sf.duration=15600000
+debug.sf.early.app.duration=17000000
+debug.sf.earlyGl.sf.duration=15600000
+debug.sf.earlyGl.app.duration=17000000
+debug.sf.hwc.min.duration=17000000
 debug.sf.treat_170m_as_sRGB=1
 debug.sf.frame_rate_multiple_threshold=120
 ro.surface_flinger.enable_frame_rate_override=false
