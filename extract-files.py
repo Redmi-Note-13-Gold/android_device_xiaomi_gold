@@ -116,6 +116,7 @@ blob_fixups: blob_fixups_user_type = {
 module = ExtractUtilsModule(
     'gold',
     'xiaomi',
+    add_firmware_proprietary_file=True,
     blob_fixups=blob_fixups,
     namespace_imports=namespace_imports,
 )
