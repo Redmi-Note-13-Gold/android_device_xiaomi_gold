@@ -14,5 +14,15 @@ bluetooth.profile.opp.enabled=true
 bluetooth.profile.pan.nap.enabled=true
 bluetooth.profile.pan.panu.enabled=true
 
+# LMKD
+ro.lmk.kill_timeout_ms=50
+ro.lmk.medium=800
+ro.lmk.psi_partial_stall_ms=200
+ro.lmk.psi_complete_stall_ms=700
+ro.lmk.thrashing_limit=30
+ro.lmk.thrashing_limit_decay=50
+ro.lmk.swap_util_max=100
+ro.lmk.swap_free_low_percentage=10
+
 # Device specific properties
 import /product/etc/sku/${ro.boot.product.hardware.sku}.prop
