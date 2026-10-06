@@ -1,14 +1,4 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
 ## are from vnd_gold 15 AP3A.240905.015 OS3.0.5.0.VNQMIXM release-keys
 
-dpm.img;AB
-gz.img;AB
-lk.img;AB
-mcupm.img;AB
-md1img.img;AB
-pi_img.img;AB
-preloader_gold.bin:preloader_raw.img;AB
 scp.img;AB
-spmfw.img;AB
-sspm.img;AB
-tee.img;AB
