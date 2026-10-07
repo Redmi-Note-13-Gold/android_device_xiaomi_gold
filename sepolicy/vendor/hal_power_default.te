@@ -3,3 +3,10 @@ typeattribute hal_power_default mlstrustedsubject;
 
 allow hal_power_default self:capability sys_nice;
 allow hal_power_default appdomain:process { getsched setsched };
+
+# Double tap to wake is switched with one xiaomi_touch ioctl.
+allow hal_power_default gold_touch_device:chr_file rw_file_perms;
+allowxperm hal_power_default gold_touch_device:chr_file ioctl 0x5400;
+
+# The service registers for notifications, which servicemanager delivers by calling back.
+binder_call(servicemanager, hal_power_default)
