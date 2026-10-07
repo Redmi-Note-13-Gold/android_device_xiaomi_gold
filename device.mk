@@ -237,6 +237,7 @@ PRODUCT_PACKAGES += \
     SystemUIOverlayGold \
     FrameworkResOverlayGold \
     TetheringConfigOverlay \
+    NetworkStackOverlayGold \
     SettingsResOverlayGold \
     WifiOverlay
 
