@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- The default HTTPS probe, www.google.com, is unreachable in mainland
+         China. A network that fails it is marked as having no internet and is
+         never joined automatically again. These answer 204 from there too. -->
+    <string-array name="config_captive_portal_https_urls" translatable="false">
+        <item>https://connectivitycheck.gstatic.com/generate_204</item>
+        <item>https://cp.cloudflare.com/generate_204</item>
+    </string-array>
+    <string-array name="config_captive_portal_http_urls" translatable="false">
+        <item>http://connectivitycheck.gstatic.com/generate_204</item>
+        <item>http://cp.cloudflare.com/generate_204</item>
+    </string-array>
+    <string-array name="config_captive_portal_fallback_urls" translatable="false">
+        <item>http://edge-http.microsoft.com/captiveportal/generate_204</item>
+    </string-array>
+</resources>
