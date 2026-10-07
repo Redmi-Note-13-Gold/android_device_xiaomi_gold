@@ -106,6 +106,10 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hwcomposer.mtk_common.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
 
+    # Apple clients cannot join a WPA3 hotspot while the driver checks the PMKID itself
+    'vendor/firmware/wifi.cfg': blob_fixup()
+        .add_line_if_missing('SapCheckPmkidInDriver 0'),
+
     # BT_VND_OP_USERIAL_CLOSE takes no parameter, and the HAL passes nullptr, but this
     # library reads a flag from it before closing the UART. Use 0 (a normal close)
     # instead: ldrb w0, [x19] -> mov w0, wzr
