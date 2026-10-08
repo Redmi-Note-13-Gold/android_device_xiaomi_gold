@@ -29,6 +29,10 @@ on post-fs
     mkdir /config/usb_gadget/g1/functions/midi.gs5
     mkdir /config/usb_gadget/g1/functions/ncm.gs6
     mkdir /config/usb_gadget/g1/functions/ncm.gs9
+    # The name Android expects of the USB tethering interface. The default is usb0,
+    # which the tethering service does not know and the Ethernet service takes for a
+    # wired network port.
+    write /config/usb_gadget/g1/functions/ncm.gs9/ifname ncm%d
     mkdir /config/usb_gadget/g1/functions/acm.gs0
     mkdir /config/usb_gadget/g1/functions/acm.gs1
     mkdir /config/usb_gadget/g1/functions/acm.gs2
