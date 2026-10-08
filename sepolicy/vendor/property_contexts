@@ -15,3 +15,9 @@ ro.vendor.config.low_ram u:object_r:vendor_mtk_audio_prop:s0 exact bool
 
 # Charging
 persist.vendor.accelerate.charge    u:object_r:vendor_accelerate_charge_prop:s0 exact string
+
+# Set by the camera HAL every time streams are configured.
+vendor.debug.configurestreams. u:object_r:vendor_mtk_emcamera_prop:s0 prefix string
+
+# Queried by the framework audio server. Never set here.
+ro.vendor.qti.va_aosp.support u:object_r:vendor_mtk_audio_prop:s0 exact bool
