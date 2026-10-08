@@ -252,6 +252,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
+# Power-off alarm
+PRODUCT_PACKAGES += \
+    PowerOffAlarm
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
