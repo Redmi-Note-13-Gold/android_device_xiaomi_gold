@@ -28,5 +28,7 @@
          be empty. -->
     <string-array translatable="false" name="config_tether_ncm_regexs">
         <item>ncm\\d</item>
+        <!-- The NCM gadget interface is called usb0 here, and USB tethering uses NCM -->
+        <item>usb\\d</item>
     </string-array>
 </resources>
