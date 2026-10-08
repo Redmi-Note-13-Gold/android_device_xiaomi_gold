@@ -16,3 +16,7 @@ allow mtk_hal_camera gold_camera_data_file:file create_file_perms;
 allow mtk_hal_camera persist_data_file:dir search;
 allow mtk_hal_camera gold_camera_persist_file:dir r_dir_perms;
 allow mtk_hal_camera gold_camera_persist_file:file r_file_perms;
+
+# Debug switches without a vendor prefix (demo.*, debuglog.drv*,
+# cam.egnsavefile.enable). Nothing sets them.
+dontaudit mtk_hal_camera default_prop:file read;
