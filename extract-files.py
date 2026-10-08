@@ -119,6 +119,14 @@ blob_fixups: blob_fixups_user_type = {
             b'\x3c\x00\x00\x94\xe0\x03\x1f\x2a\x5a\x00\x00\x94',
         ),
 
+    # hardware/xiaomi's sensors HAL exposes the pick-up sensor as the standard pick-up
+    # gesture, but only knows it under this type name
+    'vendor/lib64/hw/sensors.mt6833.so': blob_fixup()
+        .binary_regex_replace(
+            br'xiaomi\.sensor\.pick_up\x00',
+            b'xiaomi.sensor.pickup\x00\x00',
+        ),
+
     # mtk pq
     'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so',
