@@ -10,3 +10,6 @@ r_dir_file(charger_vendor, sysfs_power_supply)
 r_dir_file(charger_vendor, gold_sysfs_display)
 allow charger_vendor sysfs_leds:dir search;
 allow charger_vendor sysfs_leds:file rw_file_perms;
+
+# The charger UI looks up properties that are never set (ro.recovery.skip_ev_rel_input).
+dontaudit charger_vendor default_prop:file read;

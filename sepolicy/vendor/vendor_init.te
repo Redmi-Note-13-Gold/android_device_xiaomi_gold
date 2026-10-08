@@ -6,3 +6,7 @@ allow vendor_init proc_ppm:file w_file_perms;
 
 # The charger launch action waits for the DRM node.
 allow vendor_init dri_device:chr_file getattr;
+
+# The stock modem init script tries to create /data/vendor_de/md, which only vold may
+# do. Stock policy does not allow it either, and the modem works without it.
+dontaudit vendor_init vendor_userdir_file:dir write;
