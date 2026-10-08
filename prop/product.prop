@@ -29,3 +29,6 @@ ro.fm.band=1
 ro.fm.low_band=875
 ro.fm.high_band=1080
 ro.fm.seek_space=1
+
+# Updates: the list of published builds
+lineage.updater.uri=https://raw.githubusercontent.com/Redmi-Note-13-Gold/lineageos-gold/main/updates.json
