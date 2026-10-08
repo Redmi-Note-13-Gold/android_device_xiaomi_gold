@@ -4,4 +4,8 @@
     <dimen name="status_bar_padding_top">14.0px</dimen>
 
     <dimen name="status_bar_padding_bottom">17.0px</dimen>
+    <!-- In landscape the camera cutout pushes one end of the status bar in by 94px, or
+         by 111px when it also has to clear the privacy dot. Use the same on the other
+         end so that the bar is symmetric whichever way the phone is turned. -->
+    <dimen name="rounded_corner_content_padding">111px</dimen>
 </resources>
