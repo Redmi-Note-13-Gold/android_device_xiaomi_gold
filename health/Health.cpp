@@ -5,7 +5,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <android-base/file.h>
 #include <android-base/logging.h>
+#include <android-base/strings.h>
 #include <android/binder_interface_utils.h>
 #include <health-impl/Health.h>
 #include <health/utils.h>
@@ -17,6 +19,9 @@
 #if !CHARGER_FORCE_NO_UI
 #include <health-impl/ChargerUtils.h>
 #endif
+
+#include <chrono>
+#include <thread>
 
 using aidl::android::hardware::health::HalHealthLoop;
 using aidl::android::hardware::health::Health;
@@ -91,6 +96,37 @@ class ChargerCallbackImpl final : public ChargerCallback {
     using ChargerCallback::ChargerCallback;
     bool ChargerEnableSuspend() override { return true; }
 };
+
+constexpr char kPanelDpms[] =
+        "/sys/devices/platform/14000000.dispsys_config/drm/card0/card0-DSI-1/dpms";
+constexpr char kBacklight[] = "/sys/devices/platform/mtk_leds/leds/lcd-backlight/brightness";
+constexpr char kChargerBrightness[] = "1638";
+// The backlight driver ignores a value equal to the last one it was given.
+constexpr char kChargerBrightnessNudge[] = "1637";
+
+// The panel comes back dark every time it is powered up, and the charger UI only blanks and
+// unblanks it. Set the brightness again whenever the panel turns on.
+void RestoreBacklightOnUnblank() {
+    using namespace std::chrono_literals;
+
+    bool wasOn = true;
+    while (true) {
+        std::string state;
+        const bool on = android::base::ReadFileToString(kPanelDpms, &state) &&
+                        android::base::StartsWith(state, "On");
+        if (on && !wasOn) {
+            // The first write can arrive before the panel accepts commands, and a second
+            // write of the same value would be dropped by the driver.
+            android::base::WriteStringToFile(kChargerBrightnessNudge, kBacklight);
+            std::this_thread::sleep_for(300ms);
+            if (!android::base::WriteStringToFile(kChargerBrightness, kBacklight)) {
+                PLOG(ERROR) << "Failed to restore the backlight";
+            }
+        }
+        wasOn = on;
+        std::this_thread::sleep_for(200ms);
+    }
+}
 #endif
 
 }  // namespace
@@ -106,6 +142,7 @@ int main(int argc, char** argv) {
 
     if (argc >= 2 && argv[1] == kChargerArg) {
 #if !CHARGER_FORCE_NO_UI
+        std::thread(RestoreBacklightOnUnblank).detach();
         return ChargerModeMain(binder, std::make_shared<ChargerCallbackImpl>(binder));
 #endif
 
