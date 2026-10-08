@@ -105,6 +105,15 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/hwcomposer.mtk_common.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
 
+    # BT_VND_OP_USERIAL_CLOSE takes no parameter, and the HAL passes nullptr, but this
+    # library reads a flag from it before closing the UART. Use 0 (a normal close)
+    # instead: ldrb w0, [x19] -> mov w0, wzr
+    'vendor/lib64/libbt-vendor.so': blob_fixup()
+        .binary_regex_replace(
+            b'\x3c\x00\x00\x94\x60\x02\x40\x39\x5a\x00\x00\x94',
+            b'\x3c\x00\x00\x94\xe0\x03\x1f\x2a\x5a\x00\x00\x94',
+        ),
+
     # mtk pq
     'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so',
