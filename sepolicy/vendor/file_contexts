@@ -20,3 +20,6 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.gold          u:object_r:hal_health_default_exec:s0
 
 /dev/xiaomi-touch    u:object_r:gold_touch_device:s0
+
+# Touch gestures
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch-service\.gold    u:object_r:hal_lineage_touch_default_exec:s0
