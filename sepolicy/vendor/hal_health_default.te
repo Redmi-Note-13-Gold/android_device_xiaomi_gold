@@ -1,2 +1,12 @@
 r_dir_file(hal_health_default, gold_sysfs_charger)
 r_dir_file(hal_health_default, gold_sysfs_usbpd)
+
+# The charger UI is the same binary and reads the same nodes.
+r_dir_file(charger_vendor, gold_sysfs_charger)
+r_dir_file(charger_vendor, gold_sysfs_usbpd)
+r_dir_file(charger_vendor, sysfs_power_supply)
+
+# It turns the backlight on again whenever the panel comes back from blank.
+r_dir_file(charger_vendor, gold_sysfs_display)
+allow charger_vendor sysfs_leds:dir search;
+allow charger_vendor sysfs_leds:file rw_file_perms;

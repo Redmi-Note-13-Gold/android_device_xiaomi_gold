@@ -44,6 +44,7 @@ genfscon sysfs /devices/platform/11e02000.i2c/i2c-7/7-005b/vmax u:object_r:gold_
 
 # Display panel state exposed to PQ and composer.
 genfscon sysfs /devices/platform/14013000.dsi/14013000.dsi.0/panel_event u:object_r:gold_sysfs_display:s0
+genfscon sysfs /devices/platform/14000000.dispsys_config/drm/card0/card0-DSI-1/dpms u:object_r:gold_sysfs_display:s0
 genfscon sysfs /devices/virtual/mi_display/disp_feature/disp-DSI-0 u:object_r:gold_sysfs_display:s0
 
 # Board identification queried by the NVRAM service.
