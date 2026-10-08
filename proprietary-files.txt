@@ -1619,6 +1619,13 @@ vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
 vendor/apex/com.google.android.widevine.nonupdatable.apex|522c687fc5fdcff4ff89ca36b57a5c03420448dc
 vendor/lib64/liboemcrypto.so
 
+# FM (Firmware)
+vendor/firmware/fm_cust.cfg
+vendor/firmware/mt6631_fm_v1_coeff.bin
+vendor/firmware/mt6631_fm_v1_patch.bin
+vendor/firmware/mt6635_fm_v1_coeff.bin
+vendor/firmware/mt6635_fm_v1_patch.bin
+
 # Fingerprint
 vendor/lib64/hw/fingerprint.fpc.default.so
 vendor/lib64/hw/fingerprint.goodix.default.so;FIX_SONAME

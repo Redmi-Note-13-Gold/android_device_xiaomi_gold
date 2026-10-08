@@ -52,6 +52,9 @@ ro.netflix.bsp_rev=MTK6833-32817-1
 persist.vendor.fingerprint.type=side
 persist.vendor.fingerprint.sensor_location=1080|1065|180|local:0
 
+# FM
+persist.vendor.connsys.fm_chipid=mt6631_6635
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
