@@ -26,3 +26,10 @@ ro.lmk.swap_free_low_percentage=10
 
 # Device specific properties
 import /product/etc/sku/${ro.boot.product.hardware.sku}.prop
+
+# FM radio: MT6631 (chip id 0x6631), 87.5-108 MHz in 100 kHz steps
+ro.fm.chip=26161
+ro.fm.band=1
+ro.fm.low_band=875
+ro.fm.high_band=1080
+ro.fm.seek_space=1
