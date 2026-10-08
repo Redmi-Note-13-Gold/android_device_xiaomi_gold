@@ -566,6 +566,14 @@
     <string name="config_mainBuiltInDisplayCutoutRectApproximation">M 0,0 H -28 V 94 H 28 V 0 H 0 Z</string>
     <string name="config_mainDisplayShape">M20 0h1040s20 0 20 20v2360s0 20 -20 20h-1040s-20 0 -20 -20v-2360s0 -20 20 -20</string>
 
+    <!-- NTP servers, tried in order. The default time.android.com does not answer from
+         mainland China, so the clock was never set from the network there. -->
+    <string-array name="config_ntpServers" translatable="false">
+        <item>ntp://pool.ntp.org</item>
+        <item>ntp://time.cloudflare.com</item>
+        <item>ntp://time.apple.com</item>
+    </string-array>
+
     <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
     <bool name="config_dozePulsePickup">true</bool>
 </resources>
