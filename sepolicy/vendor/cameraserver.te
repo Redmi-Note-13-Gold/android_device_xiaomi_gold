@@ -1,2 +1,5 @@
 # CameraService checks this vendor-owned allowlist when opening a camera.
 get_prop(cameraserver, vendor_gold_camera_prop)
+
+# So does the camera framework code that runs inside each app.
+get_prop(appdomain, vendor_gold_camera_prop)
