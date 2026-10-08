@@ -1697,6 +1697,12 @@ vendor/lib/libion_mtk.so
 vendor/lib/libion_ulit.so
 vendor/lib/libladder.so
 vendor/lib/mt6833/libmml.so:vendor/lib/libmml.so
+vendor/lib/egl/libGLES_mali.so
+vendor/lib/egl/libGLES_meow.so
+vendor/lib/egl/libMEOW_data.so
+vendor/lib/egl/libMEOW_gift.so
+vendor/lib/egl/libMEOW_qt.so
+vendor/lib/egl/libMEOW_trace.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
@@ -1709,7 +1715,13 @@ vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
 vendor/lib64/hw/hwcomposer.mt6833.so:vendor/lib64/hw/hwcomposer.mtk_common.so;FIX_SONAME
 vendor/lib/hw/mapper.mediatek.so
 vendor/lib64/hw/mapper.mediatek.so
+vendor/lib/hw/vulkan.mali.so
 vendor/lib64/hw/vulkan.mali.so
+vendor/lib/mt6833/libaiselector.so:vendor/lib/libaiselector.so
+vendor/lib/mt6833/libdpframework.so:vendor/lib/libdpframework.so
+vendor/lib/libDefaultFpsActor.so
+vendor/lib/libFrameRecord.so
+vendor/lib/libNoFpsActor.so
 vendor/lib64/mt6833/libaiselector.so:vendor/lib64/libaiselector.so
 vendor/lib64/mt6833/libdpframework.so:vendor/lib64/libdpframework.so
 vendor/lib64/libDefaultFpsActor.so
@@ -1722,6 +1734,7 @@ vendor/lib64/libaal_sec.so
 vendor/lib64/libaalservice.so
 vendor/lib64/libappgamepq.so
 vendor/lib64/libcomposer_ext.so
+vendor/lib/libgpu_aux.so
 vendor/lib64/libgpu_aux.so
 vendor/lib/libgpud.so
 vendor/lib64/libgpud.so
