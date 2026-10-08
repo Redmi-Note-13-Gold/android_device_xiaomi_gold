@@ -62,6 +62,7 @@ blob_fixups: blob_fixups_user_type = {
     # worst patching spree you will see in your life
     ('vendor/lib/hw/mapper.mediatek.so',
      'vendor/lib64/hw/mapper.mediatek.so',
+     'vendor/lib/egl/libGLES_mali.so',
      'vendor/lib64/egl/libGLES_mali.so',
      'vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek',
      'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so',
