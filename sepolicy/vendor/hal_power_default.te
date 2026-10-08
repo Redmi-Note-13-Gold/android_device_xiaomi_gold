@@ -10,3 +10,8 @@ allow hal_power_default input_device:chr_file rw_file_perms;
 
 # The service registers for notifications, which servicemanager delivers by calling back.
 binder_call(servicemanager, hal_power_default)
+
+# When the framework starts, the service applies task profiles to a client's threads,
+# and opening /proc/<tid>/... of another user's process falls back to this capability
+# check (hidepid). Platform policy reserves it for a handful of system domains.
+dontaudit hal_power_default self:capability sys_ptrace;
