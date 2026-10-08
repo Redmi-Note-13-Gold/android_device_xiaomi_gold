@@ -64,6 +64,7 @@ on property:vendor.connsys.driver.ready=yes
     insmod /vendor/lib/modules/wmt_chrdev_wifi.ko
     insmod /vendor/lib/modules/wlan_drv_gen4m_6833.ko
     start wlan_assistant
+    insmod /vendor/lib/modules/gps_drv_stp.ko
 
 #service BGW /vendor/bin/BGW
 #    user system
