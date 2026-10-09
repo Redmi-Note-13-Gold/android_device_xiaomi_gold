@@ -125,7 +125,9 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/libsilkybrightnesscore.so',
      'vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so',
      'vendor/lib64/hw/hwcomposer.mtk_common.so',
-     'vendor/lib64/libpqxmlparser.so'): blob_fixup()
+     'vendor/lib64/libpqxmlparser.so',
+     'vendor/lib64/hw/audio.primary.mt6833.so',
+     'vendor/lib64/librt_extamp_intf.so'): blob_fixup()
         .replace_needed(
             'libtinyxml2.so',
             'libtinyxml2-v34.so',
