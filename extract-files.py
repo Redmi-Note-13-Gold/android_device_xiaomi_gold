@@ -22,6 +22,34 @@ namespace_imports = [
     'hardware/xiaomi',
 ]
 
+# The codec service and MediaTek's codec libraries are Android 15 binaries. Classes in the
+# Codec2 support libraries changed size in Android 16, so these keep the stock copies of
+# those libraries, which proprietary-files.txt installs as <name>-v35.so.
+codec2_stock_libs = (
+    'libcodec2',
+    'libcodec2_aidl',
+    'libcodec2_hal_common',
+    'libcodec2_hidl@1.0',
+    'libcodec2_hidl@1.1',
+    'libcodec2_hidl@1.2',
+    'libcodec2_hidl_plugin',
+    'libcodec2_soft_common',
+    'libcodec2_vndk',
+    'libsfplugin_ccodec_utils',
+    'libstagefright_aidl_bufferpool2',
+    'libstagefright_bufferpool@2.0.1',
+    'libstagefright_bufferqueue_helper',
+    'libstagefright_foundation',
+)
+
+
+def codec2_fixup() -> blob_fixup:
+    fixup = blob_fixup()
+    for lib in codec2_stock_libs:
+        fixup = fixup.replace_needed(f'{lib}.so', f'{lib}-v35.so')
+    return fixup
+
+
 blob_fixups: blob_fixups_user_type = {
 
     'vendor/lib64/hw/fingerprint.fpc.default.so': blob_fixup()
@@ -126,6 +154,16 @@ blob_fixups: blob_fixups_user_type = {
             br'xiaomi\.sensor\.pick_up\x00',
             b'xiaomi.sensor.pickup\x00\x00',
         ),
+
+    ('vendor/bin/hw/android.hardware.media.c2-mediatek',
+     'vendor/lib64/libcodec2_mtk_c2store.so',
+     'vendor/lib64/libcodec2_mtk_vdec.so',
+     'vendor/lib64/libcodec2_mtk_venc.so',
+     'vendor/lib64/libcodec2_vpp_fa_plugin.so',
+     'vendor/lib64/libcodec2_vpp_mi_plugin.so',
+     'vendor/lib64/libcodec2_vpp_qt_plugin.so',
+     'vendor/lib64/libcodec2_vpp_rs_plugin.so',
+     *(f'vendor/lib64/{lib}-v35.so' for lib in codec2_stock_libs)): codec2_fixup(),
 
     # mtk pq
     'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so': blob_fixup()
