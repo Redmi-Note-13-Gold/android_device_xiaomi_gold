@@ -165,6 +165,13 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libcodec2_vpp_rs_plugin.so',
      *(f'vendor/lib64/{lib}-v35.so' for lib in codec2_stock_libs)): codec2_fixup(),
 
+    # The crash handler runs inside the codec service and needs these two system calls.
+    # Without them the service is killed halfway through reporting a crash and no
+    # tombstone is written.
+    'vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy': blob_fixup()
+        .add_line_if_missing('sysinfo: 1')
+        .add_line_if_missing('uname: 1'),
+
     # mtk pq
     'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V7-ndk.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V4-ndk.so',
