@@ -48,7 +48,7 @@
     <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
     <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
-    <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">10</integer>
+    <integer translatable="false" name="config_wifiDelayDisconnectOnImsLostMs">1000</integer>
 
     <!-- List of allowed channels in 2GHz band for softap. If the device doesn't want to restrict
      channels this should be empty. Values is a comma separated channel string and/or channel
