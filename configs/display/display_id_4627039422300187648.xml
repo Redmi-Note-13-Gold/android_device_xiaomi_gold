@@ -28,9 +28,12 @@
     <highBrightnessMode enabled="true">
         <transitionPoint>0.49975574</transitionPoint>
         <minimumLux>6001</minimumLux>
+        <!-- No limit on how long high brightness may stay on. Not zeros: with a zero
+             budget the framework reschedules its check every millisecond for as long
+             as the brightness is in the high range. -->
         <timing>
-            <timeWindowSecs>0</timeWindowSecs>
-            <timeMaxSecs>0</timeMaxSecs>
+            <timeWindowSecs>86400</timeWindowSecs>
+            <timeMaxSecs>86400</timeMaxSecs>
             <timeMinSecs>0</timeMinSecs>
         </timing>
         <allowInLowPowerMode>true</allowInLowPowerMode>
