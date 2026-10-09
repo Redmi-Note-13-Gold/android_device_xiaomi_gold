@@ -1844,6 +1844,20 @@ vendor/lib64/libcodec2_vpp_fa_plugin.so
 vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
+vendor/lib64/libcodec2.so:vendor/lib64/libcodec2-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_aidl.so:vendor/lib64/libcodec2_aidl-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_hal_common.so:vendor/lib64/libcodec2_hal_common-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.0.so:vendor/lib64/libcodec2_hidl@1.0-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.1.so:vendor/lib64/libcodec2_hidl@1.1-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl@1.2.so:vendor/lib64/libcodec2_hidl@1.2-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_hidl_plugin.so:vendor/lib64/libcodec2_hidl_plugin-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_soft_common.so:vendor/lib64/libcodec2_soft_common-v35.so;FIX_SONAME
+vendor/lib64/libcodec2_vndk.so:vendor/lib64/libcodec2_vndk-v35.so;FIX_SONAME
+vendor/lib64/libsfplugin_ccodec_utils.so:vendor/lib64/libsfplugin_ccodec_utils-v35.so;FIX_SONAME
+vendor/lib64/libstagefright_aidl_bufferpool2.so:vendor/lib64/libstagefright_aidl_bufferpool2-v35.so;FIX_SONAME
+vendor/lib64/libstagefright_bufferpool@2.0.1.so:vendor/lib64/libstagefright_bufferpool@2.0.1-v35.so;FIX_SONAME
+vendor/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bufferqueue_helper-v35.so;FIX_SONAME
+vendor/lib64/libstagefright_foundation.so:vendor/lib64/libstagefright_foundation-v35.so;FIX_SONAME
 vendor/lib64/libformatter.so
 
 # Frozen AIDL libraries retained under compat SONAMEs for stock blobs
