@@ -72,4 +72,9 @@
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
     <string translatable="false" name="config_wifi_tcp_buffers">1730560,3461120,6922240,524288,1048576,4525824</string>
+
+    <!-- Do not disconnect Wi-Fi to apply a country code: try while connected instead.
+         The attempt fails either way on this device, because wpa_supplicant is built
+         without MediaTek's driver command library. -->
+    <bool translatable="false" name="config_wifiStaDynamicCountryCodeUpdateSupported">true</bool>
 </resources>
