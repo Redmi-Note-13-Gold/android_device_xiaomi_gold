@@ -133,9 +133,6 @@ blob_fixups: blob_fixups_user_type = {
             'libtinyxml2-v34.so',
         ),
 
-    'vendor/lib64/hwcomposer.mtk_common.so': blob_fixup()
-        .add_needed('libprocessgroup_shim.so'),
-
     # Apple clients cannot join a WPA3 hotspot while the driver checks the PMKID itself
     'vendor/firmware/wifi.cfg': blob_fixup()
         .add_line_if_missing('SapCheckPmkidInDriver 0'),
