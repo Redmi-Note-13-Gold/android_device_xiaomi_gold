@@ -188,10 +188,6 @@ PRODUCT_PACKAGES += \
     init.recovery.mt6833.rc \
     ueventd.mtk.rc
 
-# Tethering offload
-PRODUCT_PACKAGES += \
-    android.hardware.tetheroffload-V1-service.rc
-
 # Charging
 PRODUCT_PACKAGES += \
     init.batterysecret.rc
