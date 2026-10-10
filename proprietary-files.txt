@@ -1622,6 +1622,26 @@ vendor/etc/camera/morpho_image_refiner_tuning_params_vendor_ultra_llhdr.xml
 vendor/etc/camera/sceneDetection.xml
 vendor/etc/camera/sg_pre_model
 odm/etc/camera/camerabooster.json
+vendor/etc/camera/png/Alley.png
+vendor/etc/camera/png/Bright.png
+vendor/etc/camera/png/Cinematic.png
+vendor/etc/camera/png/Classic.png
+vendor/etc/camera/png/Clear.png
+vendor/etc/camera/png/Cream.png
+vendor/etc/camera/png/Essence.png
+vendor/etc/camera/png/Freehand.png
+vendor/etc/camera/png/Fresh.png
+vendor/etc/camera/png/Gold_vibes.png
+vendor/etc/camera/png/Lazy_day.png
+vendor/etc/camera/png/Monsoon.png
+vendor/etc/camera/png/Nature.png
+vendor/etc/camera/png/Old_town.png
+vendor/etc/camera/png/Orchid.png
+vendor/etc/camera/png/Parkour.png
+vendor/etc/camera/png/Pure.png
+vendor/etc/camera/png/Reversal.png
+vendor/etc/camera/png/Starlight.png
+vendor/etc/camera/png/Vivid.png
 
 # ConsumerIR
 vendor/lib64/hw/consumerir.common.so
