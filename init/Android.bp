@@ -103,13 +103,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "android.hardware.tetheroffload-V1-service.rc",
-    src: "android.hardware.tetheroffload-V1-service.rc",
-    relative_install_path: "init",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.mtkgki.rc",
     src: "init.mtkgki.rc",
     relative_install_path: "init/hw",
