@@ -74,13 +74,15 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.sensors-V3-ndk.so',
         ),
 
-    # From device_xiaomi_duchamp
+    # The stock service links V3 of the KeyMint interface and also
+    # lib_android_keymaster_keymint_utils, which is built here against V4. Soong refuses a
+    # module that depends on two versions of one AIDL interface, so the service gets stock's
+    # own V3 library, which proprietary-files.txt installs under this name.
     'vendor/bin/hw/android.hardware.security.keymint@3.0-service.mitee': blob_fixup()
         .replace_needed(
             'android.hardware.security.keymint-V3-ndk.so',
             'android.hardware.security.keymint-V3-ndk-prebuilt.so',
         ),
-
 
     # From device_xiaomi_duchamp
     'vendor/lib64/libmtkcam_hal_aidl_common.so': blob_fixup()
