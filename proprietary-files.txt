@@ -1386,6 +1386,9 @@ vendor/bin/lib3a.ccu.ddr
 vendor/lib64/libimgsensorca.so
 vendor/lib64/libispcameraca.so
 vendor/lib64/libmtcloader.so
+vendor/lib64/libtflite_mtk.so
+vendor/lib64/libruy.so:vendor/lib64/libruy-v35.so;FIX_SONAME
+vendor/lib64/libtextclassifier_hash.so:vendor/lib64/libtextclassifier_hash-v35.so;FIX_SONAME
 
 # Camera (configs)
 vendor/etc/camera/asd/asdcam_108M+2M_1/sceneDetection.xml
