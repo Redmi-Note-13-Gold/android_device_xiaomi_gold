@@ -1820,6 +1820,8 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.6.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.7.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
+vendor/lib64/libgamehdr.so
+vendor/lib64/librgbwlightsensor.so
 
 # Media
 vendor/bin/v3avpud
