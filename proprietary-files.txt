@@ -2024,6 +2024,7 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V2-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.smartratswitch-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
+vendor/lib64/libcapctrl.so
 
 # Radio (Config)
 vendor/etc/ecc_list.xml
