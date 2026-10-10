@@ -1867,6 +1867,7 @@ vendor/lib/HEVCSecureVdecCA.so
 vendor/lib/VP9SecureVdecCA.so
 vendor/lib/libAVCSecureVencCA.so
 vendor/lib/libmtcloader.so
+vendor/lib/libmp4enc_sa.ca7.so;DISABLE_CHECKELF
 
 # Media (Codec2)
 vendor/bin/hw/android.hardware.media.c2-mediatek-64b:vendor/bin/hw/android.hardware.media.c2-mediatek;TRYSRCFIRST
