@@ -2021,6 +2021,9 @@ vendor/lib64/libsensor_custom.so
 vendor/lib64/sensors.touch.detect.so
 
 # Touchscreen
+vendor/firmware/Conf_MultipleTest_CSOT.ini
+vendor/firmware/Conf_MultipleTest_CSOT_mask0x01.ini
+vendor/firmware/Conf_MultipleTest_TianMa.ini
 vendor/firmware/focaltech_ts_fw_CSOT.bin
 vendor/firmware/focaltech_ts_fw_CSOT_mask0x01.bin
 vendor/firmware/focaltech_ts_fw_TianMa.bin
