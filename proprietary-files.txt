@@ -1966,6 +1966,7 @@ vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
 vendor/lib64/libneuron_runtime.6.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
+vendor/lib64/mt6833/libneuron_adapter_mgvi.so:vendor/lib64/libneuron_adapter_mgvi.so;DISABLE_CHECKELF
 
 # NVRAM
 vendor/bin/nvram_daemon
