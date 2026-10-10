@@ -2511,6 +2511,7 @@ vendor/etc/thermald-devices.conf
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
 vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin
+vendor/bin/iwpriv
 
 # WiFi (Firmware)
 vendor/firmware/txpowerctrl.cfg
