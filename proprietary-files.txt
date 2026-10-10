@@ -1696,6 +1696,16 @@ vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
 vendor/etc/gnss/agps_profiles_conf2.xml
 vendor/etc/MNL_Config.xml
 vendor/etc/slp_conf
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_DoCoMo.xml
+vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_Rakuten.xml
+vendor/etc/mpe.conf
+vendor/etc/security/cacerts_supl/111e6273.0
+vendor/etc/security/cacerts_supl/3ad48a91.0
+vendor/etc/security/cacerts_supl/4bcd7fc4.0
+vendor/etc/security/cacerts_supl/7651b327.0
+vendor/etc/security/cacerts_supl/c542733d.0
+vendor/etc/security/cacerts_supl/cec771d5.0
+vendor/etc/security/cacerts_supl/f336e3d1.0
 
 # Graphics
 vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
