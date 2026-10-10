@@ -328,9 +328,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
 
-#PRODUCT_PACKAGES += \
-    #init.mt6833.thermal.rc
-
 # USB
 $(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
 
