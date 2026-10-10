@@ -163,6 +163,7 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libcodec2_vpp_mi_plugin.so',
      'vendor/lib64/libcodec2_vpp_qt_plugin.so',
      'vendor/lib64/libcodec2_vpp_rs_plugin.so',
+     'vendor/lib64/vpp_hdrmeta_handler_plugin.so',
      *(f'vendor/lib64/{lib}-v35.so' for lib in codec2_stock_libs)): codec2_fixup(),
 
     # MediaTek's TensorFlow Lite keeps the stock copies of the two libraries it links,

@@ -1906,6 +1906,9 @@ vendor/lib64/libstagefright_bufferpool@2.0.1.so:vendor/lib64/libstagefright_buff
 vendor/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bufferqueue_helper-v35.so;FIX_SONAME
 vendor/lib64/libstagefright_foundation.so:vendor/lib64/libstagefright_foundation-v35.so;FIX_SONAME
 vendor/lib64/libformatter.so
+vendor/lib64/libmvpu_wrapper.so
+vendor/lib64/libswtcc.so
+vendor/lib64/vpp_hdrmeta_handler_plugin.so
 
 # NFC / Secure Element
 vendor/bin/hw/android.hardware.nfc-service-st
