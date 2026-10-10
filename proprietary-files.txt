@@ -1382,6 +1382,10 @@ vendor/lib64/vendor.mediatek.hardware.camera.atms-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.bgservice-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.camera.postproc-V1-ndk.so
+vendor/bin/lib3a.ccu.ddr
+vendor/lib64/libimgsensorca.so
+vendor/lib64/libispcameraca.so
+vendor/lib64/libmtcloader.so
 
 # Camera (configs)
 vendor/etc/camera/asd/asdcam_108M+2M_1/sceneDetection.xml
