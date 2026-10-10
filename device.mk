@@ -227,9 +227,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
 # Media
-$(call soong_config_set_bool,android_hardware_mediatek_codec2,link_v33_libstagefright_foundation,true)
-# The matching 64-bit stock Codec2 service is supplied by gold-vendor.mk.
-
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
