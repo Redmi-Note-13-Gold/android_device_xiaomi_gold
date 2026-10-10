@@ -228,7 +228,6 @@ persist.vendor.radio.fd.off.counter=50
 persist.vendor.radio.fd.r8.counter=150
 persist.vendor.radio.fd.off.r8.counter=50
 persist.vendor.radio.dynamic_sar=1
-#persist.vendor.radio.mtk_dsbp_support=3
 persist.vendor.factory.GB2312=yes
 persist.vendor.mims_support=2
 ro.vendor.mtk_c2k_lte_mode=2

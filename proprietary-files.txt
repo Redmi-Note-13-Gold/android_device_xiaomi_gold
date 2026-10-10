@@ -1860,13 +1860,6 @@ vendor/lib64/libstagefright_bufferqueue_helper.so:vendor/lib64/libstagefright_bu
 vendor/lib64/libstagefright_foundation.so:vendor/lib64/libstagefright_foundation-v35.so;FIX_SONAME
 vendor/lib64/libformatter.so
 
-# Frozen AIDL libraries retained under compat SONAMEs for stock blobs
-#vendor/lib/android.hardware.graphics.common-V4-ndk.so
-#vendor/lib/android.hardware.graphics.common-V5-ndk.so
-#vendor/lib64/android.hardware.camera.common-V2-ndk.so
-#vendor/lib64/android.hardware.graphics.common-V4-ndk.so
-#vendor/lib64/android.hardware.graphics.common-V5-ndk.so
-
 # NFC / Secure Element
 vendor/bin/hw/android.hardware.nfc-service-st
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
@@ -2020,9 +2013,6 @@ vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 
 # Sensors
-#vendor/lib64/android.frameworks.sensorservice-V1-ndk.so
-#vendor/lib64/android.hardware.sensors-V2-ndk.so
-#vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6833.so
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhfmanagerwrapper.so
@@ -2086,12 +2076,9 @@ vendor/etc/thermal-phone.conf
 vendor/etc/thermal-tgame.conf
 vendor/etc/thermal-video.conf
 vendor/etc/thermal-videochat.conf
-#vendor/etc/thermal_info_config.json
 vendor/etc/thermald-devices.conf
 
 # WiFi
-#vendor/bin/wlan_assistant
-#vendor/etc/init/wlan_assistant.rc
 vendor/lib64/libwifi-hal.so:vendor/lib64/libwifi-hal-mtk.so;FIX_SONAME
 vendor/firmware/soc2_2_ram_wifi_1a_1_hdr.bin
 vendor/firmware/soc2_2_ram_wifi_1_1_hdr.bin

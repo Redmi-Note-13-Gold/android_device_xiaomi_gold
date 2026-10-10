@@ -5,9 +5,6 @@
 
 DEVICE_PATH := device/xiaomi/gold
 
-# Keep authentication out of the way while the new firmware is being brought up.
-#WITH_ADB_INSECURE := true
-
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
@@ -199,7 +196,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.batterysecret.rc
 
-# ?
+# Kernel module loading and cgroups
 PRODUCT_PACKAGES += \
     init.mtkgki.rc \
     init.cgroup.rc
@@ -307,8 +304,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
-    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
+    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -319,11 +315,13 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/xiaomi
-    #hardware/mediatek/libaedv \
 
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB
 $(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
