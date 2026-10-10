@@ -1832,6 +1832,18 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.8.so
 vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/libgamehdr.so
 vendor/lib64/librgbwlightsensor.so
+vendor/lib64/mt6833/libdre.so:vendor/lib64/libdre.so
+vendor/lib64/libpcdbi.so
+vendor/lib64/libpcdmr.so
+vendor/lib/libaal_key.so
+vendor/lib/libappgamepq.so
+vendor/lib/mt6833/libdre.so:vendor/lib/libdre.so
+vendor/lib/libgamehdr.so
+vendor/lib/mt6833/libhdrvideo.so:vendor/lib/libhdrvideo.so
+vendor/lib/libpcdbi.so
+vendor/lib/libpcdmr.so
+vendor/lib/libpq_cust_base.so
+vendor/lib/mt6833/libscltm.so:vendor/lib/libscltm.so
 
 # Media
 vendor/bin/v3avpud
