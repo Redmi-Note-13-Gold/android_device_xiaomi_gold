@@ -43,8 +43,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 67108864
 
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 #androidboot.selinux=permissive
-#BOARD_BOOTCONFIG += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -79,7 +78,7 @@ TARGET_KERNEL_CONFIG := \
 	gki_defconfig \
 	gold.config
 
-# Keep the kernel, DTB, DTBO and vendor modules fom stock until the in-tree MT6833 clock/power/module
+# The kernel, DTB, DTBO and vendor modules are the stock ones
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img

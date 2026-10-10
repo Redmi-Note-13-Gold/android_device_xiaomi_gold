@@ -2,6 +2,3 @@
 on post-fs-data
     # calibration
     mkdir /data/vendor/sensor 0774 system system
-    # Sensor
-    #chmod 0660 /dev/hf_manager
-    #chown system system /dev/hf_manager
