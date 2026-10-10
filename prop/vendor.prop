@@ -145,7 +145,7 @@ debug.hwui.use_hint_manager=false
 # Media
 media.c2.hal.selection=aidl
 debug.stagefright.c2inputsurface=-1
-media.c2.dmabuf.padding=512
+media.c2.dmabuf.padding=3072
 media.stagefright.thumbnail.prefer_hw_codecs=true
 debug.mediatek.disp_decompress=1
 persist.vendor.md_c2k_cap_dep_check=0
@@ -154,7 +154,8 @@ ro.vendor.mtk_config_max_dram_size=0x800000000
 ro.vendor.mtk_sec_video_path_support=1
 ro.vendor.mtk_video_hevc_enc_support=1
 vendor.media.omx=0
-vendor.mtk.vdec.waitkeyframeforplay=9
+vendor.mtk.vdec.waitkeyframeforplay=11
+vendor.mtk.vdec.decode.error.handle.mode=3
 
 # Neural Networks
 debug.mtk_tflite.target_nnapi=29
