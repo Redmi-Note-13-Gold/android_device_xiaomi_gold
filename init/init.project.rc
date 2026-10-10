@@ -75,9 +75,6 @@ on post-fs-data
     chmod 0666 /data/vendor/camera/model/rt_model/preview_model
     chmod 0666 /data/vendor/camera/model/rt_model/preview_policy
     chmod 0666 /data/vendor/camera/dof_mecp/dof_mecp.bin
-# N17-V code for HQ-407326 by baoguangxiu at 2024/08/30 start
-    start lightsensornvcfg
-# N17-V code for HQ-407326 by baoguangxiu at 2024/08/30 end
 # N17-V code for HQ-411998 by p-luowenhao3 at 2023/08/19 start
 
 #fingerprint
@@ -103,10 +100,6 @@ on init
     # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
     #
     # export SECONDARY_STORAGE /storage/sdcard1
-
-service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
-    class late_start
-    disabled
 
 #N17 code for HQ-404538 by p-qiutong1 at 2024.8.12 start
 on boot
@@ -148,31 +141,6 @@ on boot
 #N17 code for HQ-404538 by kejunlin at 20240814 start
 on boot
 
-# N17-V code for HQ-407326 by baoguangxiu at 2024/08/30 start
-service lightsensornvcfg /vendor/bin/lightsensornvcfg.sh
-    disabled
-    user root
-    group root
-    oneshot
-# N17-V code for HQ-407326 by baoguangxiu at 2024/08/30 end
-
-service setwlansarlow /vendor/bin/setwlansarlow.sh
-    disabled
-    user root
-    oneshot
-service setwlansarhigh /vendor/bin/setwlansarhigh.sh
-    disabled
-    user root
-    oneshot
-service getwlansar /vendor/bin/getwlansar.sh
-    disabled
-    user root
-    oneshot
-    group root root
-service setsarcal /vendor/bin/setsarcal.sh
-    disabled
-    user root
-    oneshot
 on property:vendor.sysctl.tx=0
     exec /vendor/bin/iwpriv wlan0 driver "SET_PWR_CTRL MySar 2"
 on property:vendor.sysctl.tx=1
