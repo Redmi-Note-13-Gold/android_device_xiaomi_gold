@@ -265,9 +265,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
 # Radio
-# NOTE: Renamed from vendor_mdota_symlink
 PRODUCT_PACKAGES += \
-    mdota_symlink \
     init.modem.rc \
     android.hardware.telephony.ims.prebuilt.xml
 
