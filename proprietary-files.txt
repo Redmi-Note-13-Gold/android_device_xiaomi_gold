@@ -63,6 +63,14 @@ vendor/lib/libaedv.so
 vendor/lib/libmisight.so
 vendor/lib64/libaedv.so
 vendor/lib64/libmisight.so
+vendor/etc/misound_res_headphone.bin
+vendor/etc/misound_res_spk.bin
+vendor/lib/libbluetooth_mtk_pure.so
+vendor/lib64/libbluetooth_mtk_pure.so
+vendor/lib/libcvsd_mtk.so
+vendor/lib/libmsbc_mtk.so
+vendor/lib/libspeech_enh_lib.so;FIX_SONAME
+vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 
 # Audio (Configs)
 vendor/etc/aurisys_config.xml
@@ -1932,6 +1940,7 @@ vendor/lib64/libcustom_nvram.so
 vendor/lib64/libfile_op.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
+vendor/lib/libcustom_nvram.so
 
 # Power
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
