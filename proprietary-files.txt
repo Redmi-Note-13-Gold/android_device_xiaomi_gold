@@ -333,6 +333,9 @@ vendor/etc/audio_param_ce/VolumeGainMap_AudioParam.xml
 vendor/etc/audio_param_ce/VolumeGainMap_ParamUnitDesc.xml
 vendor/etc/audio_param_ce/Volume_AudioParam.xml
 vendor/etc/audio_param_ce/Volume_ParamUnitDesc.xml
+vendor/etc/aidl/le_audio/aidl_audio_set_configurations.json
+vendor/etc/aidl/le_audio/aidl_audio_set_scenarios.json
+vendor/etc/le_audio_codec_capabilities.xml
 
 # Bluetooth (Driver)
 vendor/lib/libbluetooth_audio_session_aidl_mtk.so
