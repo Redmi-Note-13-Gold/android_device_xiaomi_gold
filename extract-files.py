@@ -165,6 +165,12 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libcodec2_vpp_rs_plugin.so',
      *(f'vendor/lib64/{lib}-v35.so' for lib in codec2_stock_libs)): codec2_fixup(),
 
+    # MediaTek's TensorFlow Lite keeps the stock copies of the two libraries it links,
+    # like the Codec2 libraries above. proprietary-files.txt installs them as <name>-v35.so.
+    'vendor/lib64/libtflite_mtk.so': blob_fixup()
+        .replace_needed('libruy.so', 'libruy-v35.so')
+        .replace_needed('libtextclassifier_hash.so', 'libtextclassifier_hash-v35.so'),
+
     # The crash handler runs inside the codec service and needs these two system calls.
     # Without them the service is killed halfway through reporting a crash and no
     # tombstone is written.
