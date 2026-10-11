@@ -4,6 +4,8 @@ Device tree for LineageOS 23.2. This is a fork of [Dhterech's tree](https://gith
 
 What works, what does not, and how to build are in [lineageos-gold](https://github.com/Star-caorui/lineageos-gold#status).
 
+The kernel is prebuilt and not in a repository: `extract-kernel.sh` fills `device/xiaomi/gold-kernel` from the stock package, the same one `extract-files.py` takes the vendor blobs from.
+
 Tested on one China unit (2312DRAABC, `gold_cn`). The configuration for the Indian and Global (`iron`) models comes from upstream; nobody here has tested it.
 
 ## Credits
