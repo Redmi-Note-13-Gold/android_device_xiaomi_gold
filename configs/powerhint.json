@@ -91,8 +91,8 @@
       "Path": "/sys/kernel/ged/hal/custom_boost_gpu_freq",
       "Values": [
         "44",
-        "32",
-        "38"
+        "16",
+        "32"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -161,14 +161,15 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Type": "DoHint",
-      "Value": "GPU_INTERACTION"
+      "Node": "GPUExpensiveRendering",
+      "Duration": 0,
+      "Value": "32"
     },
     {
-      "PowerHint": "GPU_INTERACTION",
+      "PowerHint": "LAUNCH",
       "Node": "GPUExpensiveRendering",
-      "Duration": 60,
-      "Value": "38"
+      "Duration": 1200,
+      "Value": "16"
     }
   ],
   "AdpfConfig": [
