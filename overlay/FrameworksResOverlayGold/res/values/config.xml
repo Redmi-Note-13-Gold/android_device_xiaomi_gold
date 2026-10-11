@@ -502,8 +502,11 @@
          and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
     <!--<bool name="config_displayBlanksAfterDoze">false</bool>-->
-    <!--<bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>-->
-    <!--<bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>-->
+
+    <!-- Let the device auto-suspend, and leave interactive mode, while the display is
+         dozing instead of only once it is off. Stock sets both. -->
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
