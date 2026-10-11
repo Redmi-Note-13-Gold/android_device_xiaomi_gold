@@ -26,3 +26,6 @@
 
 # Touch gestures
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch-service\.gold    u:object_r:hal_lineage_touch_default_exec:s0
+
+# Neural networks service. The shared MediaTek policy labels the service by a name without "-legacy".
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks-shim-service-mtk-legacy    u:object_r:mtk_hal_neuralnetworks_exec:s0

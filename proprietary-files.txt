@@ -2020,6 +2020,17 @@ vendor/lib64/vendor.mediatek.hardware.netdagent-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
 # Neural Networks
+vendor/bin/hw/android.hardware.neuralnetworks-shim-service-mtk-legacy
+vendor/etc/armnn_app.config
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
+vendor/etc/nnapi_powerhal.json
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
+vendor/etc/vintf/manifest/manifest_apuware_utils_aidl.xml
+vendor/lib64/APUWareUtilsAidlServer.so
+vendor/lib64/libneuralnetworks_sl_driver_mtk_legacy_prebuilt.so;DISABLE_CHECKELF
+vendor/lib64/libnputils.so
+vendor/lib64/vendor.mediatek.hardware.apuware.utils-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.mtkpower-V2-ndk.so
 vendor/lib64/mt6833/libnir_neon_driver.so:vendor/lib64/libnir_neon_driver.so
 vendor/lib64/libapu_mdw.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so
