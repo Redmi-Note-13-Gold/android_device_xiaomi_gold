@@ -498,6 +498,9 @@
          Doze dreams will run whenever the power manager is in a dozing state. -->
     <string name="config_dozeComponent" translatable="false">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
+    <!-- Wireless display (Miracast): show the entry in the cast settings. Stock enables it too. -->
+    <bool name="config_enableWifiDisplay">true</bool>
+
     <!-- If true, the doze component is not started until after the screen has been turned off
          and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
