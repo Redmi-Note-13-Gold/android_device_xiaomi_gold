@@ -63,6 +63,7 @@ vendor/lib/libaedv.so
 vendor/lib/libmisight.so
 vendor/lib64/libaedv.so
 vendor/lib64/libmisight.so
+vendor/etc/misound_res.bin
 vendor/etc/misound_res_headphone.bin
 vendor/etc/misound_res_spk.bin
 vendor/lib/libbluetooth_mtk_pure.so
