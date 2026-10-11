@@ -1809,6 +1809,7 @@ vendor/lib64/libmml.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/libscltm.so
 vendor/lib64/libsilkybrightnesscore.so
+vendor/lib/libOpenCL.so
 vendor/lib/vendor.mediatek.hardware.composer_ext-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
