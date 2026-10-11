@@ -1,4 +1,4 @@
-# All blobs are from V3.0.5.0.VNQMIXM unless noted or pinned
+# All blobs are from V3.0.5.0.VNQMIXM
 
 # Audio
 vendor/firmware/aw87xxx_acf.bin
@@ -1654,8 +1654,8 @@ vendor/firmware/WMT_SOC.cfg
 vendor/firmware/soc2_2_ram_mcu_1a_1_hdr.bin
 vendor/firmware/soc2_2_ram_mcu_1_1_hdr.bin
 
-# DRM (Widevine) - from malachite OS2.0.206.0.VOOMIXM
-vendor/apex/com.google.android.widevine.nonupdatable.apex|522c687fc5fdcff4ff89ca36b57a5c03420448dc
+# DRM (Widevine)
+vendor/apex/com.google.android.widevine.nonupdatable.apex
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libwvkeybox.so
 vendor/lib64/libwvkeyboxext.so
