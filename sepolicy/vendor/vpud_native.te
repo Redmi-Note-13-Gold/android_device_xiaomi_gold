@@ -1,0 +1,3 @@
+# The codec daemon looks up three test switches that are never set:
+# gce.test, prepend.test and vilte.test.
+dontaudit vpud_native default_prop:file read;

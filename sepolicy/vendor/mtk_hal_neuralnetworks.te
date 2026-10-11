@@ -1,0 +1,3 @@
+# The neural networks service asks for platform name properties that only
+# stock sets (ro.mediatek.platform, ro.chipname) and carries on without them.
+dontaudit mtk_hal_neuralnetworks default_prop:file read;
