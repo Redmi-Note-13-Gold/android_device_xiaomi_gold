@@ -144,13 +144,11 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so',
      'vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so',
-     'vendor/lib/vendor.mediatek.hardware.pq_aidl-V4-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
      'vendor/lib/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
      'vendor/lib64/hw/hwcomposer.mtk_common.so',
      'vendor/lib64/libmtkcam_grallocutils.so',
      'vendor/lib64/libcodec2_fsr.so',
-     'vendor/lib/libcodec2_fsr.so',
      'vendor/lib/libgpud.so',
      'vendor/lib64/libgpud.so'): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
