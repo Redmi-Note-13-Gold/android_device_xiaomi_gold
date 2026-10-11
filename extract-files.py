@@ -9,6 +9,11 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 
+from extract_utils.fixups_lib import (
+    lib_fixups,
+    lib_fixups_user_type,
+)
+
 from extract_utils.main import (
     ExtractUtils,
     ExtractUtilsModule,
@@ -42,6 +47,17 @@ codec2_stock_libs = (
 )
 
 
+def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
+    return f'{lib}_{partition}' if partition == 'vendor' else None
+
+
+# The video call interface library exists in both system_ext and vendor.
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+    'vendor.mediatek.hardware.videotelephony-V1-ndk': lib_fixup_vendor_suffix,
+}
+
+
 def codec2_fixup() -> blob_fixup:
     fixup = blob_fixup()
     for lib in codec2_stock_libs:
@@ -67,6 +83,20 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libaudioutils_shim.so')
         .replace_needed('libaudio_aidl_conversion_common_ndk.so',
                         'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
+
+    # Stock's IMS stack
+    'system_ext/lib64/libimsma.so': blob_fixup()
+        .replace_needed('libsink.so', 'libsink-mtk.so'),
+
+    # libsink still calls the Android 15 AudioTrack constructor; the compatibility library has it.
+    'system_ext/lib64/libsink-mtk.so': blob_fixup()
+        .add_needed('libaudioclient_shim.so'),
+
+    'system_ext/priv-app/ImsService/ImsService.apk': blob_fixup()
+        .apktool_patch('blob-patches/ImsService'),
+
+    'system_ext/priv-app/MtkTelephonyAssist/MtkTelephonyAssist.apk': blob_fixup()
+        .apktool_patch('blob-patches/MtkTelephonyAssist'),
 
     'vendor/lib64/hw/fingerprint.fpc.default.so': blob_fixup()
         .binary_regex_replace(
@@ -210,6 +240,7 @@ module = ExtractUtilsModule(
     'xiaomi',
     add_firmware_proprietary_file=True,
     blob_fixups=blob_fixups,
+    lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
 

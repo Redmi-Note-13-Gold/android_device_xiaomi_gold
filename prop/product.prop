@@ -29,3 +29,9 @@ ro.fm.band=1
 ro.fm.low_band=875
 ro.fm.high_band=1080
 ro.fm.seek_space=1
+
+# IMS: AOSP carries no VoLTE, video call or Wi-Fi calling availability for the mainland
+# carriers, so say they are available and leave the decision to the network.
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1

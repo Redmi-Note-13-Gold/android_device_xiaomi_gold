@@ -1,0 +1,38 @@
+From 300a08485d04d4f233461e4465cd5b7e727bb595 Mon Sep 17 00:00:00 2001
+From: Betterr <51264180+Star-caorui@users.noreply.github.com>
+Date: Sun, 11 Oct 2026 20:00:00 +0800
+Subject: [PATCH] MtkTelephonyAssist: Do not ask the MIUI framework whether
+ this is MIUI
+
+DataStateController calls android.telephony.TelephonyBaseUtilsStub, a class
+that only exists in Xiaomi's framework. Answer "no" in place.
+---
+ smali/com/mediatek/telephony/DataStateController.smali | 8 ++------
+ 1 file changed, 2 insertions(+), 6 deletions(-)
+
+diff --git a/smali/com/mediatek/telephony/DataStateController.smali b/smali/com/mediatek/telephony/DataStateController.smali
+index d6fb4be..06b3d64 100644
+--- a/smali/com/mediatek/telephony/DataStateController.smali
++++ b/smali/com/mediatek/telephony/DataStateController.smali
+@@ -279,9 +279,7 @@
+     if-le v1, v2, :cond_2
+ 
+     .line 243
+-    invoke-static {}, Landroid/telephony/TelephonyBaseUtilsStub;->isMiuiRom()Z
+-
+-    move-result v1
++    const/4 v1, 0x0
+ 
+     if-eqz v1, :cond_1
+ 
+@@ -476,9 +474,7 @@
+     if-eqz v1, :cond_1
+ 
+     .line 281
+-    invoke-static {}, Landroid/telephony/TelephonyBaseUtilsStub;->isMiuiRom()Z
+-
+-    move-result v1
++    const/4 v1, 0x0
+ 
+     const/4 v2, 0x0
+ 

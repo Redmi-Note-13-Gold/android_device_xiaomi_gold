@@ -288,9 +288,19 @@ PRODUCT_PACKAGES += \
 # MediaTek framework classes used by the proprietary radio stack.
 $(call inherit-product, hardware/mediatek/frameworks/mediatek-frameworks.mk)
 
-# AOSP compatible MediaTek IMS service and framework/telephony overlays.
-# from techyminati/android_vendor_mediatek_ims
-$(call inherit-product, vendor/mediatek/ims/ims.mk)
+# IMS: the service, its helpers and the video call stack are taken from stock. The compatibility
+# jar supplies a telephony class they still use, and the overlays are MediaTek's own defaults.
+$(call inherit-product, hardware/lineage/compat/frameworks/compat.mk)
+
+PRODUCT_PACKAGES += \
+    MssiCarrierConfigOverlay \
+    MssiFrameworkTelephony5gOverlay \
+    MssiFrameworkTelephonyOverlay \
+    MssiTelephonyOverlay
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.ims.xml \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-com.mediatek.telephony.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.telephony.xml
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/sysconfig/com.mediatek.ims.config.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/com.mediatek.ims.config.xml \
