@@ -86,9 +86,9 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)-kernel/dtb
 BOARD_SYSTEM_DLKM_SRC := $(DEVICE_PATH)-kernel/system_dlkm
 TARGET_PREBUILT_KERNEL_HEADERS := $(DEVICE_PATH)/kernel-headers/kernel-uapi-headers.tar.gz
 
-# These optional MIUI scheduling modules were built for 6.6.30 and are rejected
-# by the 6.6.118 kernel. Binder itself is provided by GKI; binder_prio remains.
-GOLD_INCOMPATIBLE_VENDOR_KERNEL_MODULES := \
+# Modules of MIUI's app freezer (Millet). They load on this kernel, but nothing outside
+# MIUI talks to them. Binder itself is provided by GKI; binder_prio remains.
+GOLD_UNUSED_VENDOR_KERNEL_MODULES := \
     binder_gki.ko \
     millet_binder.ko \
     millet_core.ko \
@@ -98,12 +98,12 @@ GOLD_INCOMPATIBLE_VENDOR_KERNEL_MODULES := \
     millet_sig.ko
 
 BOARD_VENDOR_KERNEL_MODULES := $(filter-out \
-    $(addprefix $(DEVICE_PATH)-kernel/vendor_dlkm/,$(GOLD_INCOMPATIBLE_VENDOR_KERNEL_MODULES)), \
+    $(addprefix $(DEVICE_PATH)-kernel/vendor_dlkm/,$(GOLD_UNUSED_VENDOR_KERNEL_MODULES)), \
     $(wildcard $(DEVICE_PATH)-kernel/vendor_dlkm/*.ko))
 
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)-kernel/modules.load.vendor))
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(filter-out \
-    $(GOLD_INCOMPATIBLE_VENDOR_KERNEL_MODULES), \
+    $(GOLD_UNUSED_VENDOR_KERNEL_MODULES), \
     $(BOARD_VENDOR_KERNEL_MODULES_LOAD))
 
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/vendor_ramdisk/*.ko)
