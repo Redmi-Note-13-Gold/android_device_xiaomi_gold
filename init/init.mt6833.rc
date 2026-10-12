@@ -17,9 +17,6 @@ on early-init
     chown system system /sys/class/huaqin/interface/hw_info/pcba_config
     chmod 0664 /sys/class/huaqin/interface/hw_info/pcba_config
 
-    chmod 0666 /sys/class/power_supply/battery/input_suspend
-    chown system system /sys/class/power_supply/battery/input_suspend
-
 on init
     write /proc/ppm/policy/ut_fix_core_num "6 2"
     write /proc/ppm/policy/ut_fix_freq_idx "0 0"

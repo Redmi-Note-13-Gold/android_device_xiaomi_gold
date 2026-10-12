@@ -194,7 +194,14 @@ PRODUCT_COPY_FILES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.gold \
-    android.hardware.health-service.gold-recovery
+    android.hardware.health-service.gold-recovery \
+    vendor.lineage.health-service.default
+
+# Charging control: writing 1 to input_suspend stops charging, 0 resumes it
+$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/input_suspend)
+$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
+$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
 # Init
 PRODUCT_PACKAGES += \

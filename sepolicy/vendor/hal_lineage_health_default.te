@@ -1,0 +1,4 @@
+# Charging control writes the battery's input_suspend node.
+allow hal_lineage_health_default sysfs_batteryinfo:dir r_dir_perms;
+allow hal_lineage_health_default sysfs_batteryinfo:file rw_file_perms;
+allow hal_lineage_health_default sysfs_batteryinfo:lnk_file r_file_perms;

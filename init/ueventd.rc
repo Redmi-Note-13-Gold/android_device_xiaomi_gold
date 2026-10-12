@@ -146,6 +146,9 @@
 /sys/devices/platform/leds-mt65xx/leds/blue   delay_on      0664  system   system
 /sys/devices/platform/leds-mt65xx/leds/blue   delay_off      0664  system   system
 
+# Charging control
+/sys/class/power_supply/battery   input_suspend   0660  system   system
+
 #GPIO
 /dev/mtgpio               0600   radio      root
 
