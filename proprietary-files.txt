@@ -2008,6 +2008,12 @@ vendor/lib64/libfile_op.so
 vendor/lib64/libnvram.so
 vendor/lib64/libnvram_sec.so
 
+# Hotword enrollment
+product/priv-app/HotwordEnrollmentXGoogleRISCV_WIDEBAND/HotwordEnrollmentXGoogleRISCV_WIDEBAND.apk
+product/priv-app/HotwordEnrollmentYGoogleRISCV_WIDEBAND/HotwordEnrollmentYGoogleRISCV_WIDEBAND.apk
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+system_ext/framework/com.android.hotwordenrollment.common.util.jar
+
 # Power
 vendor/lib64/vendor.mediatek.hardware.mtkpower-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
