@@ -1,6 +1,38 @@
 # All blobs are from V3.0.5.0.VNQMIXM
 
 # Audio
+system/lib64/av-audio-types-aidl-V1-ndk.so:system/lib64/av-audio-types-aidl-V3-ndk.so;FIX_SONAME
+system_ext/bin/hw/android.hardware.audio.parameter_parser.service
+system_ext/etc/init/android.hardware.audio.parameter_parser.service.rc
+vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
+vendor/etc/init/android.hardware.audio.service-aidl.mediatek.rc
+vendor/etc/vintf/manifest/android.hardware.audio.effect.service-aidl.xml
+vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.xml:vendor/etc/vintf/manifest/android.hardware.audio.service-aidl.mediatek.xml
+vendor/etc/vintf/manifest/bluetooth_audio.xml:vendor/etc/vintf/manifest/bluetooth_audio_mtk.xml
+vendor/lib64/android.hardware.audio.core-impl-mediatek.so
+vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so
+vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so
+vendor/lib64/hw/android.hardware.soundtrigger3-impl.so
+vendor/lib64/hw/sound_trigger.primary.default.so
+vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;DISABLE_DEPS;FIX_SONAME
+vendor/lib64/libaudiopolicyconfigxml_mtk_vendor.so
+vendor/lib64/libvow_ap_test_aa.so
+vendor/lib64/libvow_ap_test_dd.so
+vendor/lib64/libvow_ap_test_ha.so
+vendor/lib64/libvow_ap_test_hh.so
+vendor/lib64/libvow_ap_test_nn.so
+vendor/lib64/libvow_ap_test_trip_aa.so
+vendor/lib64/libvow_ap_test_trip_dd.so
+vendor/lib64/libvow_ap_test_trip_ha.so
+vendor/lib64/libvow_ap_test_trip_hh.so
+vendor/lib64/libvow_ap_test_trip_nn.so
+vendor/lib64/libvow_ap_test_vaca_aa.so
+vendor/lib64/libvow_ap_test_vaca_dd.so
+vendor/lib64/libvow_ap_test_vaca_ha.so
+vendor/lib64/libvow_ap_test_vaca_hh.so
+vendor/lib64/libvow_ap_test_vaca_nn.so
+vendor/lib64/libvow_comp_test.so
 vendor/firmware/aw87xxx_acf.bin
 vendor/firmware/awinic_params.bin
 vendor/firmware/awinic_sinwave_params.bin

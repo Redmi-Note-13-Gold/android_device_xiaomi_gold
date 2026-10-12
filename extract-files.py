@@ -51,6 +51,23 @@ def codec2_fixup() -> blob_fixup:
 
 blob_fixups: blob_fixups_user_type = {
 
+    # Stock's AIDL audio service. Its helper on the system side was built against a version of
+    # the audio types library that Android 16 no longer has under that name.
+    'system_ext/bin/hw/android.hardware.audio.parameter_parser.service': blob_fixup()
+        .replace_needed('av-audio-types-aidl-V1-ndk.so', 'av-audio-types-aidl-V3-ndk.so'),
+
+    # The service converts between framework and HAL types with the Android 15 layout of that
+    # library, so it gets stock's copy under another name.
+    ('vendor/bin/hw/android.hardware.audio.service-aidl.mediatek',
+     'vendor/lib64/hw/android.hardware.soundtrigger3-impl.so'): blob_fixup()
+        .replace_needed('libaudio_aidl_conversion_common_ndk.so',
+                        'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
+
+    'vendor/lib64/android.hardware.audio.core-impl-mediatek.so': blob_fixup()
+        .add_needed('libaudioutils_shim.so')
+        .replace_needed('libaudio_aidl_conversion_common_ndk.so',
+                        'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
+
     'vendor/lib64/hw/fingerprint.fpc.default.so': blob_fixup()
         .binary_regex_replace(
             br'fingerprint\.fpc\x00',
@@ -128,6 +145,7 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/hw/hwcomposer.mtk_common.so',
      'vendor/lib64/libpqxmlparser.so',
      'vendor/lib64/hw/audio.primary.mt6833.so',
+     'vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so',
      'vendor/lib64/librt_extamp_intf.so'): blob_fixup()
         .replace_needed(
             'libtinyxml2.so',

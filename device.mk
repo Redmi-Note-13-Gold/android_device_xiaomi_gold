@@ -71,19 +71,31 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
-# Audio
+# Audio: the service, its effects factory and the sound trigger HAL are stock's AIDL ones.
+# The effect libraries the factory loads are built from source.
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.audio@7.1-impl \
-    android.hardware.audio.effect@7.0-impl
+    audio.bluetooth.default \
+    audio_policy.stub
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
-    audio.bluetooth.default
-
-PRODUCT_PACKAGES += \
-    audio_policy.stub \
-    audio.usbv2.default
+    libaecsw \
+    libagc1sw \
+    libagc2sw \
+    libbassboostsw \
+    libbundleaidl \
+    libdownmixaidl \
+    libdynamicsprocessingaidl \
+    libequalizersw \
+    libextensioneffect \
+    libhapticgeneratoraidl \
+    libloudnessenhanceraidl \
+    libnssw \
+    libpreprocessingaidl \
+    libpresetreverbsw \
+    libreverbaidl \
+    libvirtualizersw \
+    libvisualizeraidl \
+    libvolumesw
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml

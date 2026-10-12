@@ -5,6 +5,7 @@ audio.deep_buffer.media=true
 audio.offload.video=true
 audio.offload.min.duration.secs=30
 ro.audio.usb.period_us=16000
+ro.vendor.soundtrigger.dfs.support=1
 ro.config.media_vol_default=25
 ro.config.vc_call_vol_steps=11
 vendor.audio.spkcal.copy.inhal=true

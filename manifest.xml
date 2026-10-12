@@ -1,14 +1,13 @@
 <manifest version="8.0" type="device" target-level="6">
     <!-- Core HALs; source compatibility services remain where stock blobs are not used. -->
-    <hal format="hidl">
-        <name>android.hardware.audio</name>
-        <transport>hwbinder</transport>
-        <fqname>@7.1::IDevicesFactory/default</fqname>
+    <hal format="aidl">
+        <name>android.hardware.soundtrigger3</name>
+        <version>2</version>
+        <fqname>ISoundTriggerHw/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>android.hardware.audio.effect</name>
-        <transport>hwbinder</transport>
-        <fqname>@7.0::IEffectsFactory/default</fqname>
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.audio</name>
+        <fqname>IMtkAudio/default</fqname>
     </hal>
     <hal format="aidl">
         <name>android.hardware.graphics.allocator</name>
