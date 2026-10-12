@@ -146,7 +146,6 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V4-ndk.so',
      'vendor/lib64/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
      'vendor/lib/vendor.mediatek.hardware.pq_aidl-V2-ndk.so',
-     'vendor/lib64/hw/hwcomposer.mtk_common.so',
      'vendor/lib64/libmtkcam_grallocutils.so',
      'vendor/lib64/libcodec2_fsr.so',
      'vendor/lib/libgpud.so',
@@ -170,7 +169,7 @@ blob_fixups: blob_fixups_user_type = {
     # libtinyxml
     ('vendor/lib64/libsilkybrightnesscore.so',
      'vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so',
-     'vendor/lib64/hw/hwcomposer.mtk_common.so',
+     'vendor/lib64/hw/hwcomposer.mt6833.so',
      'vendor/lib64/libpqxmlparser.so',
      'vendor/lib64/hw/audio.primary.mt6833.so',
      'vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so',
