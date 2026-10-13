@@ -66,6 +66,7 @@ cp -r "$work/system_dlkm/lib/modules" "$out/system_dlkm/lib/"
 
 # EDIT 1: load wmt_drv.ko, which the Wi-Fi, Bluetooth, GPS and FM drivers all depend on.
 # Stock loads it from /vendor/etc/init/init.wmt_drv.rc, which the device tree does not carry.
+# The line is Dhterech's: his android_kernel_xiaomi_gold has it in the same place.
 sed '/^ccci_fsm_scp\.ko$/a wmt_drv.ko' "$work/vendor_dlkm/lib/modules/modules.load" \
     > "$out/modules.load.vendor"
 grep -qx 'wmt_drv.ko' "$out/modules.load.vendor"
