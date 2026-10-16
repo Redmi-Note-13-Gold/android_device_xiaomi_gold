@@ -52,7 +52,11 @@ fsck.erofs --extract="$work/system_dlkm" "$work/system_dlkm.img" >/dev/null
 # The partition image is the DTBO padded to the partition size, with an AVB footer.
 python3 "$top/external/avb/avbtool.py" erase_footer --image "$work/dtbo.img"
 
-rm -rf "$out"
+# Only what this script writes: the output is usually the gold-kernel checkout, whose git
+# history, README, gki/ and GKI symbol versions do not come from the OTA.
+rm -rf "$out/kernel" "$out/dtb" "$out/dtbo.img" "$out/vendor_ramdisk" "$out/vendor_dlkm" \
+    "$out/system_dlkm" "$out/modules.load.vendor" "$out/modules.load.vendor_ramdisk" \
+    "$out/modules.load.recovery"
 mkdir -p "$out/dtb" "$out/vendor_ramdisk" "$out/vendor_dlkm" "$out/system_dlkm/lib"
 cp "$work/boot/kernel" "$out/kernel"
 cp "$work/vendor_boot/dtb" "$out/dtb/gold.dtb"
