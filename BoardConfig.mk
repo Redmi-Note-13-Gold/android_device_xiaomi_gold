@@ -135,10 +135,13 @@ GOLD_RECOVERY_TOUCH_MODULES := \
 
 ifeq ($(GOLD_VENDOR_MODULES),stock)
 
+# A source directory that does not exist, so that kernel.mk takes the prebuilt
+# kernel quietly also where kernel/xiaomi/gold, its default, is synced for the
+# source build. The config is not used on this path.
 TARGET_KERNEL_SOURCE := kernel/xiaomi/gold-6.6
 TARGET_KERNEL_CONFIG := \
-	gki_defconfig \
-	gold.config
+    gki_defconfig \
+    gold.config
 
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(GOLD_GKI_DIR)/kernel
