@@ -20,6 +20,7 @@
 #include <health-impl/ChargerUtils.h>
 #endif
 
+#include <atomic>
 #include <chrono>
 #include <thread>
 
@@ -61,6 +62,11 @@ int32_t NormalizeChargeCounter(int32_t chargeCounter, int32_t batteryLevel,
     return chargeCounter;
 }
 
+// The battery's own full charge capacity, or the design one until it reports a plausible one.
+int32_t FullChargeUah(int32_t reportedUah) {
+    return reportedUah >= 1000000 ? reportedUah : kDesignCapacityUah;
+}
+
 class GoldHealth final : public Health {
   public:
     using Health::Health;
@@ -74,20 +80,23 @@ class GoldHealth final : public Health {
         int32_t batteryLevel = 0;
         auto capacityStatus = Health::getCapacity(&batteryLevel);
         if (capacityStatus.isOk()) {
-            *out = NormalizeChargeCounter(*out, batteryLevel, kDesignCapacityUah);
+            *out = NormalizeChargeCounter(*out, batteryLevel, FullChargeUah(fullChargeUah_));
         }
         return status;
     }
 
   protected:
     void UpdateHealthInfo(HealthInfo* healthInfo) override {
-        const int32_t fullChargeUah = healthInfo->batteryFullChargeUah >= 1000000
-                                             ? healthInfo->batteryFullChargeUah
-                                             : kDesignCapacityUah;
+        // Kept for getChargeCounterUah, which runs on a binder thread and gets no HealthInfo.
+        fullChargeUah_ = healthInfo->batteryFullChargeUah;
         healthInfo->batteryChargeCounterUah =
                 NormalizeChargeCounter(healthInfo->batteryChargeCounterUah,
-                                       healthInfo->batteryLevel, fullChargeUah);
+                                       healthInfo->batteryLevel,
+                                       FullChargeUah(healthInfo->batteryFullChargeUah));
     }
+
+  private:
+    std::atomic<int32_t> fullChargeUah_{0};
 };
 
 #if !CHARGER_FORCE_NO_UI
