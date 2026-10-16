@@ -19,9 +19,9 @@ int main() {
             std::string(::aidl::android::media::audio::IHalAdapterVendorExtension::descriptor) +
             "/default";
     auto parser = ndk::SharedRefBase::make<ParameterParser>();
-    if (AServiceManager_addService(parser->asBinder().get(), instance.c_str()) != STATUS_OK) {
-        LOG(ERROR) << "failed to register " << instance;
-    }
+    // Exits when it cannot register, so that init starts it again instead of it idling unseen.
+    binder_status_t status = AServiceManager_addService(parser->asBinder().get(), instance.c_str());
+    CHECK_EQ(status, STATUS_OK) << "Failed to register " << instance;
     ABinderProcess_joinThreadPool();
     return EXIT_FAILURE;  // should not reach
 }
