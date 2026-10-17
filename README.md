@@ -5,7 +5,7 @@ Device tree for LineageOS 24.0 (Android 17). It is checked out at `device/xiaomi
 | | |
 | --- | --- |
 | Releases, what works, tested models | [lineageos-gold](https://github.com/Star-caorui/lineageos-gold#readme) |
-| What is untested or not done | [TODO.md](TODO.md) |
+| Known issues, what is untested or not done | [ISSUES.md](https://github.com/Star-caorui/lineageos-gold/blob/main/ISSUES.md) |
 | How to build | [local_manifests](https://github.com/Star-caorui/local_manifests/tree/lineage-24.0#readme) |
 | Stock kernel and modules | [android_device_xiaomi_gold-kernel](https://github.com/Star-caorui/android_device_xiaomi_gold-kernel/tree/lineage-24.0#readme) |
 | Proprietary files | [android_vendor_xiaomi_gold](https://github.com/Star-caorui/android_vendor_xiaomi_gold/tree/lineage-24.0#readme) |
